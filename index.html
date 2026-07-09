@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Prótese Capilar | Home</title>
+
+    <style>
+        /*==========================================================
+                            01 - RESET
+        ==========================================================*/
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#111111;
+            color:#ffffff;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        img{
+            max-width:100%;
+            display:block;
+        }
+
+        /*==========================================================
+                            02 - HEADER
+        ==========================================================*/
+
+        .header{
+            width:100%;
+            height:95px;
+            background:#050505;
+            color:#ffffff;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:999;
+            border-bottom:1px solid rgba(255,255,255,0.08);
+        }
+
+        .header-container{
+            width:100%;
+            max-width:1280px;
+            height:100%;
+            margin:0 auto;
+            padding:0 46px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:26px;   
+        }
+
+        .header-logo img{
+            width:190px;
+            height:auto;
+        }
+
+        .menu-principal{
+            display:flex;
+            align-items:center;
+            gap:34px;
+        }
+
+        .menu-principal a{
+            font-size:13px;
+            font-weight:800;
+            text-transform:uppercase;
+            color:#ffffff;
+            position:relative;
+            padding:34px 0;
+            transition:.30s;
+        }
+
+        .menu-principal a:hover,
+        .menu-principal a.ativo{
+            color:#ffffff;
+        }
+
+        .menu-principal a.ativo::after,
+        .menu-principal a:hover::after{
+            content:"";
+            width:100%;
+            height:2px;
+            background:#ffffff;
+            position:absolute;
+            left:0;
+            bottom:24px;
+        }
+
+        .header-acoes{
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
+
+        .icone-botao{
+            width:18px;
+            height:18px;
+            margin-right:10px;
+            transition:.30s;
+        }
+
+        .botao-agendar:hover .icone-botao{
+            transform:rotate(-10deg) scale(1.10);
+        }
+
+        .botao-agendar{
+            height:44px;
+            padding:0 22px;
+            background:linear-gradient(135deg,#ffffff,#bfbfbf);
+            color:#000000;
+            border-radius:5px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:13px;
+            font-weight:800;
+            text-transform:uppercase;
+            white-space:nowrap;
+            transition:.30s;
+        }
+
+        .botao-agendar:hover{
+            transform:translateY(-2px);
+            box-shadow:0 10px 22px rgba(255,255,255,0.18);
+        }
+
+        .icone-whatsapp{
+            width:30px;
+            height:30px;
+        }
+
+        .botao-whatsapp{
+            width:42px;
+            height:42px;
+            border:2px solid #ffffff;
+            border-radius:8px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:22px;
+            transition:.30s;
+        }
+
+        .botao-whatsapp:hover{
+            background:#24CC63;
+            color:#000000;
+        }
+
+        .botao-menu-mobile{
+            display:none;
+            color:#ffffff;
+            font-size:32px;
+            background:none;
+            border:none;
+            cursor:pointer;
+        }
+
+        /*==========================================================
+                            03 - ÁREA DE TESTE
+        ==========================================================*/
+
+        .area-teste{
+            min-height:100vh;
+            padding-top:130px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            background:#111111;
+        }
+
+        .area-teste h1{
+            font-size:42px;
+            text-transform:uppercase;
+        }
+
+        /*==========================================================
+                            04 - RESPONSIVIDADE
+        ==========================================================*/
+
+        @media(max-width:1100px){
+
+            .header-container{
+                padding:0 24px;
+            }
+
+            .menu-principal{
+                gap:22px;
+            }
+
+            .menu-principal a{
+                font-size:12px;
+            }
+
+            .botao-agendar{
+                padding:0 16px;
+                font-size:12px;
+            }
+        }
+
+        @media(max-width:920px){
+
+            .botao-menu-mobile{
+                display:block;
+            }
+
+            .menu-principal{
+                position:absolute;
+                top:88px;
+                left:0;
+                width:100%;
+                background:#050505;
+                flex-direction:column;
+                align-items:flex-start;
+                gap:0;
+                padding:20px 36px;
+                display:none;
+                border-top:1px solid rgba(255,255,255,0.08);
+            }
+
+            .menu-principal.ativo{
+                display:flex;
+            }
+
+            .menu-principal a{
+                width:100%;
+                padding:16px 0;
+                border-bottom:1px solid rgba(255,255,255,0.08);
+            }
+
+            .menu-principal a::after{
+                display:none;
+            }
+
+            .header-acoes{
+                display:none;
+            }
+        }
+
+        @media(max-width:520px){
+
+            .header{
+                height:76px;
+            }
+
+            .header-container{
+                padding:0 18px;
+            }
+
+            .header-logo img{
+                width:110px;
+            }
+
+            .menu-principal{
+                top:76px;
+                padding:18px;
+            }
+
+            .area-teste{
+                padding-top:110px;
+            }
+
+            .area-teste h1{
+                font-size:30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================= -->
+    <!--                         02 - HEADER                       -->
+    <!-- ========================================================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="header-logo">
+                <img src="assets/imagens/logo/logo-drprotese.png" alt="Logo Dr Prótese Capilar">
+            </a>
+
+            <nav class="menu-principal" id="menuPrincipal">
+                <a href="index.html" class="ativo">Home</a>
+                <a href="proteses.html">Próteses</a>
+                <a href="antes-e-depois.html">Antes e Depois</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="depoimentos.html">Depoimentos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+
+            <div class="header-acoes">
+                 <a href="contato.html" class="botao-agendar">
+                    <img src="assets/icones/calendario.svg" alt="Calendário"       class="icone-botao">
+                             Agendar Avaliação
+                </a>
+
+                <a href="https://wa.me/5583986934230" target="_blank" class="botao-whatsapp">
+                    <img src="assets/icones/whatsapp.svg" alt="WhatsApp" class="icone-whatsapp">
+                </a>
+            </div>
+
+            <button class="botao-menu-mobile" id="botaoMenuMobile">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================================= -->
+    <!--                      03 - ÁREA DE TESTE                   -->
+    <!-- ========================================================= -->
+
+    <main class="area-teste">
+        <h1>Header criado com sucesso</h1>
+    </main>
+
+    <!-- ========================================================= -->
+    <!--                         05 - JAVASCRIPT                   -->
+    <!-- ========================================================= -->
+
+    <script>
+        const botaoMenuMobile = document.getElementById("botaoMenuMobile");
+        const menuPrincipal = document.getElementById("menuPrincipal");
+
+        botaoMenuMobile.addEventListener("click", function(){
+            menuPrincipal.classList.toggle("ativo");
+        });
+    </script>
+
+</body>
+</html>
