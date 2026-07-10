@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ========================================================= -->
+    <!-- 01 - CONFIGURAÇÕES PRINCIPAIS E SEO                       -->
+    <!-- ========================================================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Próteses capilares masculinas com aparência natural, atendimento personalizado e resultados que ajudam a recuperar sua autoestima.">
+
+    <meta
+        name="keywords"
+        content="prótese capilar, prótese capilar masculina, sistema capilar, calvície, cabelo masculino, autoestima">
+
+    <meta name="author" content="Dr Prótese Capilar">
+
+    <title>Dr Prótese Capilar | Prótese Capilar Masculina</title>
+
+    <style>
+
+        /*==========================================================
+                    ÍNDICE DO ARQUIVO INDEX.HTML
+
+                    01 - RESET
+                    02 - CONFIGURAÇÕES GERAIS
+                    03 - HEADER
+                    04 - BANNER PRINCIPAL
+                    05 - RESPONSIVIDADE DO HEADER
+                    06 - RESPONSIVIDADE DO BANNER
+        ==========================================================*/
+
+
+        /*==========================================================
+                            01 - RESET
+        ==========================================================*/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /*==========================================================
+                        02 - CONFIGURAÇÕES GERAIS
+        ==========================================================*/
+
+        main {
+            width: 100%;
+        }
+
+
+        /*==========================================================
+                            03 - HEADER
+        ==========================================================*/
+
+        .header {
+            width: 100%;
+            height: 95px;
+            background: #050505;
+            color: #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1280px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 46px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 26px;
+        }
+
+        .header-logo {
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            width: 190px;
+            height: auto;
+        }
+
+        .menu-principal {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+        }
+
+        .menu-principal a {
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff;
+            position: relative;
+            padding: 34px 0;
+            transition: 0.3s;
+        }
+
+        .menu-principal a:hover,
+        .menu-principal a.ativo {
+            color: #ffffff;
+        }
+
+        .menu-principal a.ativo::after,
+        .menu-principal a:hover::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            position: absolute;
+            left: 0;
+            bottom: 24px;
+        }
+
+        .header-acoes {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-shrink: 0;
+        }
+
+        .botao-agendar {
+            height: 44px;
+            padding: 0 22px;
+            background: linear-gradient(135deg, #ffffff, #bfbfbf);
+            color: #000000;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .botao-agendar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(255, 255, 255, 0.18);
+        }
+
+        .icone-botao {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .botao-agendar:hover .icone-botao {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .botao-whatsapp {
+            width: 42px;
+            height: 42px;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .botao-whatsapp:hover {
+            background: #24cc63;
+            border-color: #24cc63;
+            transform: translateY(-2px);
+        }
+
+        .icone-whatsapp {
+            width: 30px;
+            height: 30px;
+        }
+
+        .botao-menu-mobile {
+            display: none;
+            color: #ffffff;
+            font-size: 32px;
+            line-height: 1;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        /*==========================================================
+                        04 - BANNER PRINCIPAL
+        ==========================================================*/
+
+        .banner-principal {
+            width: 100%;
+            min-height: 650px;
+            margin-top: 95px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 76% 42%,
+                    rgba(198, 154, 65, 0.17) 0%,
+                    rgba(198, 154, 65, 0.06) 26%,
+                    transparent 53%
+                ),
+                radial-gradient(
+                    circle at 20% 25%,
+                    rgba(255, 255, 255, 0.05) 0%,
+                    transparent 38%
+                ),
+                linear-gradient(
+                    115deg,
+                    #030303 0%,
+                    #090909 42%,
+                    #151515 72%,
+                    #050505 100%
+                );
+        }
+
+        /* Efeito de iluminação no fundo do banner */
+
+        .banner-principal::before {
+            content: "";
+            width: 620px;
+            height: 620px;
+            border-radius: 50%;
+            position: absolute;
+            right: 4%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.035);
+            filter: blur(12px);
+            pointer-events: none;
+        }
+
+        /* Linha decorativa inferior */
+
+        .banner-principal::after {
+            content: "";
+            width: 52%;
+            height: 2px;
+            position: absolute;
+            right: -3%;
+            bottom: 50px;
+            transform: rotate(-3deg);
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(198, 154, 65, 0.65),
+                rgba(255, 255, 255, 0.85),
+                transparent
+            );
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+            pointer-events: none;
+        }
+
+        .banner-container {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 650px;
+            margin: 0 auto;
+            padding: 55px 90px 0;
+            position: relative;
+            display: grid;
+            grid-template-columns: 48% 52%;
+            align-items: center;
+        }
+
+
+        /*----------------------------------------------------------
+                    CONTEÚDO DE TEXTO DO BANNER
+        ----------------------------------------------------------*/
+
+        .banner-conteudo {
+
+            position: relative;
+            z-index: 3;
+            max-width: 640px;
+            padding-bottom: 40px;
+            margin-left: 70px;
+        }
+
+        .banner-etiqueta {
+            margin-bottom: 22px;
+            color: #d1a24c;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .banner-titulo {
+            max-width: 620px;
+            margin-bottom: 28px;
+            color:#ffffff;
+            font-size: clamp(48px,4.4vw,68px);
+            line-height:0.98;
+            font-weight:900;
+            letter-spacing:-2px;
+            text-transform:uppercase;
+        }
+
+        .banner-titulo span {
+            display: block;
+            color: #d1a24c;
+        }
+
+        .banner-subtitulo {
+            display:block;
+            max-width:610px;
+            margin-top:14px;
+            font-size:clamp(24px,2.1vw,34px);
+            line-height:1.12;
+            letter-spacing:-1px;
+            color:#ffffff;
+        }
+
+        .banner-descricao {
+            max-width:560px;
+            margin-bottom:32px;
+            color:#d4d4d4;
+            font-size:18px;
+            line-height:1.65;
+        }
+
+
+        /*----------------------------------------------------------
+                        BOTÕES DO BANNER
+        ----------------------------------------------------------*/
+
+        .banner-botoes {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 18px;
+            margin-bottom: 38px;
+        }
+
+        .banner-botao {
+            min-height: 48px;
+            padding: 0 22px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .banner-botao img {
+            width: 19px;
+            height: 19px;
+        }
+
+        .banner-botao-principal {
+            background: linear-gradient(135deg, #e1b75f, #b68531);
+            color: #050505;
+            border: 1px solid #d1a24c;
+        }
+
+        .banner-botao-principal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(198, 154, 65, 0.26);
+        }
+
+        .banner-botao-whatsapp {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+        }
+
+        .banner-botao-whatsapp:hover {
+            background: #ffffff;
+            color: #050505;
+            transform: translateY(-3px);
+        }
+
+
+        /*----------------------------------------------------------
+                    BENEFÍCIOS DO BANNER
+        ----------------------------------------------------------*/
+
+        .banner-beneficios {
+            max-width: 650px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .banner-beneficio {
+            min-height: 54px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-right: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .banner-beneficio:first-child {
+            padding-left: 0;
+        }
+
+        .banner-beneficio:last-child {
+            border-right: none;
+        }
+
+        .banner-beneficio-icone {
+            width: 31px;
+            height: 31px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d1a24c;
+            font-size: 25px;
+        }
+
+        .banner-beneficio-texto strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #ffffff;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .banner-beneficio-texto span {
+            display: block;
+            color: #bdbdbd;
+            font-size: 10px;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+
+        /*----------------------------------------------------------
+                        IMAGEM DO MODELO
+        ----------------------------------------------------------*/
+
+        .banner-modelo {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            align-self: end;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            z-index: 2;
+        }
+
+        .banner-modelo::before {
+            content: "";
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            position: absolute;
+            right: 7%;
+            top: 47%;
+            transform: translateY(-50%);
+            background: radial-gradient(
+                circle,
+                rgba(198, 154, 65, 0.18),
+                rgba(198, 154, 65, 0.04) 48%,
+                transparent 72%
+            );
+            filter: blur(3px);
+            z-index: -1;
+        }
+
+        .banner-modelo img{
+
+            width:auto;
+            max-width:620px;
+            height:600px;
+
+            object-fit:contain;
+            object-position:bottom right;
+
+            transform:scale(1.67);
+
+            transform-origin:bottom center;
+
+            filter:drop-shadow(-18px 15px 25px rgba(0,0,0,.45));
+
+        }
+
+
+        /*==========================================================
+                    05 - RESPONSIVIDADE DO HEADER
+        ==========================================================*/
+
+        @media (max-width: 1100px) {
+
+            .header-container {
+                padding: 0 24px;
+            }
+
+            .header-logo img {
+                width: 155px;
+            }
+
+            .menu-principal {
+                gap: 22px;
+            }
+
+            .menu-principal a {
+                font-size: 12px;
+            }
+
+            .botao-agendar {
+                padding: 0 16px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 920px) {
+
+            .botao-menu-mobile {
+                display: block;
+            }
+
+            .menu-principal {
+                width: 100%;
+                position: absolute;
+                top: 95px;
+                left: 0;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 20px 36px;
+                background: #050505;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .menu-principal.ativo {
+                display: flex;
+            }
+
+            .menu-principal a {
+                width: 100%;
+                padding: 16px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .menu-principal a::after {
+                display: none;
+            }
+
+            .header-acoes {
+                display: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            .header {
+                height: 76px;
+            }
+
+            .header-container {
+                padding: 0 18px;
+            }
+
+            .header-logo img {
+                width: 120px;
+            }
+
+            .menu-principal {
+                top: 76px;
+                padding: 18px;
+            }
+        }
+
+
+        /*==========================================================
+                    06 - RESPONSIVIDADE DO BANNER
+        ==========================================================*/
+
+        @media (max-width: 1100px) {
+
+            .banner-container {
+                padding-left: 24px;
+                padding-right: 24px;
+                grid-template-columns: 52% 48%;
+            }
+
+            .banner-modelo img {
+                max-width: 520px;
+                height: 560px;
+            }
+
+            .banner-beneficios {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 430px;
+                row-gap: 15px;
+            }
+
+            .banner-beneficio:nth-child(2) {
+                border-right: none;
+            }
+
+            .banner-beneficio:nth-child(3) {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 920px) {
+
+            .banner-principal {
+                min-height: auto;
+            }
+
+            .banner-container {
+                min-height: auto;
+                padding-top: 70px;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .banner-conteudo {
+                padding-bottom: 15px;
+            }
+
+            .banner-titulo,
+            .banner-descricao {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .banner-botoes {
+                justify-content: center;
+            }
+
+            .banner-beneficios {
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            .banner-modelo {
+                height: 500px;
+                justify-content: center;
+            }
+
+            .banner-modelo img {
+                width: 100%;
+                max-width: 530px;
+                height: 500px;
+                object-position: bottom center;
+            }
+
+            .banner-principal::after {
+                width: 90%;
+                right: 5%;
+                bottom: 35px;
+            }
+        }
+
+        @media (max-width: 620px) {
+
+            .banner-principal {
+                margin-top: 76px;
+            }
+
+            .banner-container {
+                padding: 50px 18px 0;
+            }
+
+            .banner-etiqueta {
+                font-size: 11px;
+                letter-spacing: 1.5px;
+            }
+
+            .banner-titulo {
+                font-size: 40px;
+                letter-spacing: -1px;
+            }
+
+            .banner-subtitulo {
+                margin-top: 8px;
+                font-size: 23px;
+            }
+
+            .banner-descricao {
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            .banner-botoes {
+                flex-direction: column;
+            }
+
+            .banner-botao {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .banner-beneficios {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px 0;
+            }
+
+            .banner-beneficio {
+                padding: 0 10px;
+            }
+
+            .banner-beneficio:nth-child(odd) {
+                padding-left: 0;
+            }
+
+            .banner-modelo {
+                height: 405px;
+                margin-top: 20px;
+            }
+
+            .banner-modelo img {
+                max-width: 430px;
+                height: 405px;
+            }
+        }
+
+        @media (max-width: 390px) {
+
+            .banner-titulo {
+                font-size: 34px;
+            }
+
+            .banner-subtitulo {
+                font-size: 20px;
+            }
+
+            .banner-beneficio-icone {
+                width: 25px;
+                font-size: 21px;
+            }
+
+            .banner-beneficio-texto strong {
+                font-size: 9px;
+            }
+
+            .banner-beneficio-texto span {
+                font-size: 9px;
+            }
+
+            .banner-modelo {
+                height: 350px;
+            }
+
+            .banner-modelo img {
+                height: 350px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ========================================================= -->
+    <!-- 03 - HEADER                                                -->
+    <!-- ========================================================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <!-- Logo principal -->
+
+            <a
+                href="index.html"
+                class="header-logo"
+                aria-label="Voltar para a página inicial">
+
+                <img
+                    src="assets/imagens/logo/logo-drprotese.png"
+                    alt="Dr Prótese Capilar">
+
+            </a>
+
+
+            <!-- Menu principal -->
+
+            <nav
+                class="menu-principal"
+                id="menuPrincipal"
+                aria-label="Menu principal">
+
+                <a href="index.html" class="ativo">Home</a>
+
+                <a href="proteses.html">Próteses</a>
+
+                <a href="antes-e-depois.html">Antes e Depois</a>
+
+                <a href="sobre.html">Sobre</a>
+
+                <a href="depoimentos.html">Depoimentos</a>
+
+                <a href="contato.html">Contato</a>
+
+            </nav>
+
+
+            <!-- Botões do header -->
+
+            <div class="header-acoes">
+
+                <a
+                    href="contato.html"
+                    class="botao-agendar">
+
+                    <img
+                        src="assets/icones/calendario.svg"
+                        alt=""
+                        class="icone-botao">
+
+                    Agendar Avaliação
+
+                </a>
+
+                <a
+                    href="https://wa.me/5583986934230"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao-whatsapp"
+                    aria-label="Falar pelo WhatsApp">
+
+                    <img
+                        src="assets/icones/whatsapp.svg"
+                        alt=""
+                        class="icone-whatsapp">
+
+                </a>
+
+            </div>
+
+
+            <!-- Botão do menu mobile -->
+
+            <button
+                class="botao-menu-mobile"
+                id="botaoMenuMobile"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuPrincipal">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- CONTEÚDO PRINCIPAL                                         -->
+    <!-- ========================================================= -->
+
+    <main>
+
+
+        <!-- ===================================================== -->
+        <!-- 04 - BANNER PRINCIPAL                                 -->
+        <!-- ===================================================== -->
+
+        <section
+            class="banner-principal"
+            aria-labelledby="tituloBanner">
+
+
+            <div class="banner-container">
+
+
+                <!-- ============================================= -->
+                <!-- CONTEÚDO DO BANNER                            -->
+                <!-- ============================================= -->
+
+                <div class="banner-conteudo">
+
+                    <p class="banner-etiqueta">
+                        Prótese Capilar Masculina
+                    </p>
+
+                    <h1 class="banner-titulo" id="tituloBanner">
+
+                        Transforme sua
+
+                        <span>autoestima</span>
+
+                        <small class="banner-subtitulo">
+                            com prótese capilar<br>
+                            de aparência natural
+                        </small>
+
+                    </h1>
+
+                    <p class="banner-descricao">
+                        Resultados naturais, discretos e personalizados
+                        para você recuperar sua confiança e renovar sua aparência.
+                    </p>
+
+
+                    <!-- Botões principais do banner -->
+
+                    <div class="banner-botoes">
+
+                        <a
+                            href="contato.html"
+                            class="banner-botao banner-botao-principal">
+
+                            <img
+                                src="assets/icones/calendario.svg"
+                                alt="">
+
+                            Agendar avaliação
+
+                        </a>
+
+                        <a
+                            href="https://wa.me/5583986934230"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="banner-botao banner-botao-whatsapp">
+
+                            <img
+                                src="assets/icones/whatsapp.svg"
+                                alt="">
+
+                            Falar no WhatsApp
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Benefícios apresentados no banner -->
+
+                    <div
+                        class="banner-beneficios"
+                        aria-label="Principais benefícios">
+
+
+                        <div class="banner-beneficio">
+
+                            <div
+                                class="banner-beneficio-icone"
+                                aria-hidden="true">
+
+                                ◇
+
+                            </div>
+
+                            <div class="banner-beneficio-texto">
+
+                                <strong>Natural</strong>
+
+                                <span>
+                                    e imperceptível
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="banner-beneficio">
+
+                            <div
+                                class="banner-beneficio-icone"
+                                aria-hidden="true">
+
+                                ♢
+
+                            </div>
+
+                            <div class="banner-beneficio-texto">
+
+                                <strong>Confortável</strong>
+
+                                <span>
+                                    leve e discreta
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="banner-beneficio">
+
+                            <div
+                                class="banner-beneficio-icone"
+                                aria-hidden="true">
+
+                                ◷
+
+                            </div>
+
+                            <div class="banner-beneficio-texto">
+
+                                <strong>Resultados</strong>
+
+                                <span>
+                                    imediatos
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="banner-beneficio">
+
+                            <div
+                                class="banner-beneficio-icone"
+                                aria-hidden="true">
+
+                                ♙
+
+                            </div>
+
+                            <div class="banner-beneficio-texto">
+
+                                <strong>Atendimento</strong>
+
+                                <span>
+                                    personalizado
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ============================================= -->
+                <!-- IMAGEM DO MODELO                              -->
+                <!-- ============================================= -->
+
+                <div class="banner-modelo">
+
+                    <img
+                        src="assets/imagens/home/modelo-home.webp"
+                        alt="Modelo masculino com cabelo volumoso e aparência natural"
+                        width="620"
+                        height="760"
+                        fetchpriority="high">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT DO MENU MOBILE                                  -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        const botaoMenuMobile =
+            document.getElementById("botaoMenuMobile");
+
+        const menuPrincipal =
+            document.getElementById("menuPrincipal");
+
+
+        botaoMenuMobile.addEventListener("click", function () {
+
+            const menuEstaAberto =
+                menuPrincipal.classList.toggle("ativo");
+
+            botaoMenuMobile.setAttribute(
+                "aria-expanded",
+                menuEstaAberto
+            );
+
+            botaoMenuMobile.textContent =
+                menuEstaAberto ? "✕" : "☰";
+
+        });
+
+
+        /* Fecha o menu ao clicar em um dos links */
+
+        const linksDoMenu =
+            menuPrincipal.querySelectorAll("a");
+
+
+        linksDoMenu.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                menuPrincipal.classList.remove("ativo");
+
+                botaoMenuMobile.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                botaoMenuMobile.textContent = "☰";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
