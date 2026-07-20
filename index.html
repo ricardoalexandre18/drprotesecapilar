@@ -1,1167 +1,1773 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-
-    <!-- ========================================================= -->
-    <!-- 01 - CONFIGURAÇÕES PRINCIPAIS E SEO                       -->
-    <!-- ========================================================= -->
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Próteses capilares masculinas com aparência natural, atendimento personalizado e resultados que ajudam a recuperar sua autoestima.">
-
-    <meta
-        name="keywords"
-        content="prótese capilar, prótese capilar masculina, sistema capilar, calvície, cabelo masculino, autoestima">
-
-    <meta name="author" content="Dr Prótese Capilar">
-
-    <title>Dr Prótese Capilar | Prótese Capilar Masculina</title>
-
-    <style>
-
-        /*==========================================================
-                    ÍNDICE DO ARQUIVO INDEX.HTML
-
-                    01 - RESET
-                    02 - CONFIGURAÇÕES GERAIS
-                    03 - HEADER
-                    04 - BANNER PRINCIPAL
-                    05 - RESPONSIVIDADE DO HEADER
-                    06 - RESPONSIVIDADE DO BANNER
-        ==========================================================*/
-
-
-        /*==========================================================
-                            01 - RESET
-        ==========================================================*/
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-
-        /*==========================================================
-                        02 - CONFIGURAÇÕES GERAIS
-        ==========================================================*/
-
-        main {
-            width: 100%;
-        }
-
-
-        /*==========================================================
-                            03 - HEADER
-        ==========================================================*/
-
-        .header {
-            width: 100%;
-            height: 95px;
-            background: #050505;
-            color: #ffffff;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .header-container {
-            width: 100%;
-            max-width: 1280px;
-            height: 100%;
-            margin: 0 auto;
-            padding: 0 46px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 26px;
-        }
-
-        .header-logo {
-            flex-shrink: 0;
-        }
-
-        .header-logo img {
-            width: 190px;
-            height: auto;
-        }
-
-        .menu-principal {
-            display: flex;
-            align-items: center;
-            gap: 34px;
-        }
-
-        .menu-principal a {
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #ffffff;
-            position: relative;
-            padding: 34px 0;
-            transition: 0.3s;
-        }
-
-        .menu-principal a:hover,
-        .menu-principal a.ativo {
-            color: #ffffff;
-        }
-
-        .menu-principal a.ativo::after,
-        .menu-principal a:hover::after {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background: #ffffff;
-            position: absolute;
-            left: 0;
-            bottom: 24px;
-        }
-
-        .header-acoes {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-shrink: 0;
-        }
-
-        .botao-agendar {
-            height: 44px;
-            padding: 0 22px;
-            background: linear-gradient(135deg, #ffffff, #bfbfbf);
-            color: #000000;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        .botao-agendar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(255, 255, 255, 0.18);
-        }
-
-        .icone-botao {
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-            transition: 0.3s;
-        }
-
-        .botao-agendar:hover .icone-botao {
-            transform: rotate(-10deg) scale(1.1);
-        }
-
-        .botao-whatsapp {
-            width: 42px;
-            height: 42px;
-            border: 2px solid #ffffff;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-
-        .botao-whatsapp:hover {
-            background: #24cc63;
-            border-color: #24cc63;
-            transform: translateY(-2px);
-        }
-
-        .icone-whatsapp {
-            width: 30px;
-            height: 30px;
-        }
-
-        .botao-menu-mobile {
-            display: none;
-            color: #ffffff;
-            font-size: 32px;
-            line-height: 1;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-
-        /*==========================================================
-                        04 - BANNER PRINCIPAL
-        ==========================================================*/
-
-        .banner-principal {
-            width: 100%;
-            min-height: 650px;
-            margin-top: 95px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 76% 42%,
-                    rgba(198, 154, 65, 0.17) 0%,
-                    rgba(198, 154, 65, 0.06) 26%,
-                    transparent 53%
-                ),
-                radial-gradient(
-                    circle at 20% 25%,
-                    rgba(255, 255, 255, 0.05) 0%,
-                    transparent 38%
-                ),
-                linear-gradient(
-                    115deg,
-                    #030303 0%,
-                    #090909 42%,
-                    #151515 72%,
-                    #050505 100%
-                );
-        }
-
-        /* Efeito de iluminação no fundo do banner */
-
-        .banner-principal::before {
-            content: "";
-            width: 620px;
-            height: 620px;
-            border-radius: 50%;
-            position: absolute;
-            right: 4%;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.035);
-            filter: blur(12px);
-            pointer-events: none;
-        }
-
-        /* Linha decorativa inferior */
-
-        .banner-principal::after {
-            content: "";
-            width: 52%;
-            height: 2px;
-            position: absolute;
-            right: -3%;
-            bottom: 50px;
-            transform: rotate(-3deg);
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(198, 154, 65, 0.65),
-                rgba(255, 255, 255, 0.85),
-                transparent
-            );
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-            pointer-events: none;
-        }
-
-        .banner-container {
-            width: 100%;
-            max-width: 1280px;
-            min-height: 650px;
-            margin: 0 auto;
-            padding: 55px 90px 0;
-            position: relative;
-            display: grid;
-            grid-template-columns: 48% 52%;
-            align-items: center;
-        }
-
-
-        /*----------------------------------------------------------
-                    CONTEÚDO DE TEXTO DO BANNER
-        ----------------------------------------------------------*/
-
-        .banner-conteudo {
-
-            position: relative;
-            z-index: 3;
-            max-width: 640px;
-            padding-bottom: 40px;
-            margin-left: 70px;
-        }
-
-        .banner-etiqueta {
-            margin-bottom: 22px;
-            color: #d1a24c;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .banner-titulo {
-            max-width: 620px;
-            margin-bottom: 28px;
-            color:#ffffff;
-            font-size: clamp(48px,4.4vw,68px);
-            line-height:0.98;
-            font-weight:900;
-            letter-spacing:-2px;
-            text-transform:uppercase;
-        }
-
-        .banner-titulo span {
-            display: block;
-            color: #d1a24c;
-        }
-
-        .banner-subtitulo {
-            display:block;
-            max-width:610px;
-            margin-top:14px;
-            font-size:clamp(24px,2.1vw,34px);
-            line-height:1.12;
-            letter-spacing:-1px;
-            color:#ffffff;
-        }
-
-        .banner-descricao {
-            max-width:560px;
-            margin-bottom:32px;
-            color:#d4d4d4;
-            font-size:18px;
-            line-height:1.65;
-        }
-
-
-        /*----------------------------------------------------------
-                        BOTÕES DO BANNER
-        ----------------------------------------------------------*/
-
-        .banner-botoes {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-wrap: nowrap;
-            gap: 18px;
-            margin-bottom: 38px;
-        }
-
-        .banner-botao {
-            min-height: 48px;
-            padding: 0 22px;
-            border-radius: 5px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .banner-botao img {
-            width: 19px;
-            height: 19px;
-        }
-
-        .banner-botao-principal {
-            background: linear-gradient(135deg, #e1b75f, #b68531);
-            color: #050505;
-            border: 1px solid #d1a24c;
-        }
-
-        .banner-botao-principal:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(198, 154, 65, 0.26);
-        }
-
-        .banner-botao-whatsapp {
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.65);
-        }
-
-        .banner-botao-whatsapp:hover {
-            background: #ffffff;
-            color: #050505;
-            transform: translateY(-3px);
-        }
-
-
-        /*----------------------------------------------------------
-                    BENEFÍCIOS DO BANNER
-        ----------------------------------------------------------*/
-
-        .banner-beneficios {
-            max-width: 650px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-        }
-
-        .banner-beneficio {
-            min-height: 54px;
-            padding: 0 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-right: 1px solid rgba(255, 255, 255, 0.14);
-        }
-
-        .banner-beneficio:first-child {
-            padding-left: 0;
-        }
-
-        .banner-beneficio:last-child {
-            border-right: none;
-        }
-
-        .banner-beneficio-icone {
-            width: 31px;
-            height: 31px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d1a24c;
-            font-size: 25px;
-        }
-
-        .banner-beneficio-texto strong {
-            display: block;
-            margin-bottom: 3px;
-            color: #ffffff;
-            font-size: 11px;
-            text-transform: uppercase;
-        }
-
-        .banner-beneficio-texto span {
-            display: block;
-            color: #bdbdbd;
-            font-size: 10px;
-            line-height: 1.3;
-            white-space: nowrap;
-        }
-
-
-        /*----------------------------------------------------------
-                        IMAGEM DO MODELO
-        ----------------------------------------------------------*/
-
-        .banner-modelo {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            align-self: end;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            z-index: 2;
-        }
-
-        .banner-modelo::before {
-            content: "";
-            width: 430px;
-            height: 430px;
-            border-radius: 50%;
-            position: absolute;
-            right: 7%;
-            top: 47%;
-            transform: translateY(-50%);
-            background: radial-gradient(
-                circle,
-                rgba(198, 154, 65, 0.18),
-                rgba(198, 154, 65, 0.04) 48%,
-                transparent 72%
-            );
-            filter: blur(3px);
-            z-index: -1;
-        }
-
-        .banner-modelo img{
-
-            width:auto;
-            max-width:620px;
-            height:600px;
-
-            object-fit:contain;
-            object-position:bottom right;
-
-            transform:scale(1.67);
-
-            transform-origin:bottom center;
-
-            filter:drop-shadow(-18px 15px 25px rgba(0,0,0,.45));
-
-        }
-
-
-        /*==========================================================
-                    05 - RESPONSIVIDADE DO HEADER
-        ==========================================================*/
-
-        @media (max-width: 1100px) {
-
-            .header-container {
-                padding: 0 24px;
+    <head>
+        <!-- SEO - Configurações básicas e metadados da página -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Dr Prótese Capilar: soluções personalizadas em prótese capilar masculina em Campina Grande-PB."
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+        <title>Dr Prótese Capilar | Campina Grande</title>
+        <style>
+             /* GERAL - Remoção dos espaçamentos padrões do navegador */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-
-            .header-logo img {
-                width: 155px;
+            /* GERAL - Rolagem suave e compensação do cabeçalho fixo */
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 84px;
             }
-
-            .menu-principal {
-                gap: 22px;
+            /* GERAL - Aparência principal do corpo da página */
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #181818;
+                background: #f7f7f5;
+                line-height: 1.6;
+                overflow-x: hidden;
             }
-
-            .menu-principal a {
-                font-size: 12px;
-            }
-
-            .botao-agendar {
-                padding: 0 16px;
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 920px) {
-
-            .botao-menu-mobile {
+            /* GERAL - Comportamento responsivo das imagens */
+            img {
                 display: block;
+                max-width: 100%;
             }
-
-            .menu-principal {
-                width: 100%;
-                position: absolute;
-                top: 95px;
-                left: 0;
-                display: none;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                padding: 20px 36px;
-                background: #050505;
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
+            /* GERAL - Aparência padrão dos links */
+            a {
+                color: inherit;
+                text-decoration: none;
             }
-
-            .menu-principal.ativo {
-                display: flex;
+            /* GERAL - Remoção do destaque de toque em links e botões */
+            button,
+            a {
+                -webkit-tap-highlight-color: transparent;
             }
-
-            .menu-principal a {
-                width: 100%;
-                padding: 16px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            /* GERAL - Herança da fonte nos botões */
+            button {
+                font: inherit;
             }
-
-            .menu-principal a::after {
-                display: none;
+            /* GERAL - Limite de largura e centralização do conteúdo */
+            .conteiner {
+                width: min(1180px, calc(100% - 40px));
+                margin: 0 auto;
             }
-
-            .header-acoes {
-                display: none;
+            /* GERAL - Espaçamento vertical padrão das seções */
+            .secao {
+                padding: 86px 0;
             }
-        }
-
-        @media (max-width: 520px) {
-
-            .header {
-                height: 76px;
+            /* GERAL - Aparência padrão dos rótulos das seções */
+            .rotulo {
+                color: #c6a15b;
+                font-size: 0.78rem;
+                font-weight: 800;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
             }
-
-            .header-container {
-                padding: 0 18px;
+            /* VÍDEO - Dourado sólido no rótulo Nossa essência */
+            .video-secao .rotulo {
+                color: #b88624;
+                text-shadow: none;
             }
-
-            .header-logo img {
-                width: 120px;
+            /* PRÓTESES - Dourado metálico no rótulo Soluções personalizadas */
+            .proteses-chamada .rotulo {
+                color: transparent;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
             }
+            /* PRÓTESES - Dourado metálico nos ícones dos benefícios */
+            .proteses-chamada .beneficio-icone {
+                color: #111;
+                border-color: #f4d76b;
 
-            .menu-principal {
-                top: 76px;
-                padding: 18px;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+                    0 4px 12px rgba(214, 163, 19, 0.25);
             }
-        }
-
-
-        /*==========================================================
-                    06 - RESPONSIVIDADE DO BANNER
-        ==========================================================*/
-
-        @media (max-width: 1100px) {
-
-            .banner-container {
-                padding-left: 24px;
-                padding-right: 24px;
-                grid-template-columns: 52% 48%;
+             /* ANTES E DEPOIS - Dourado sólido no rótulo Resultados */
+            .antes-depois-secao .rotulo {
+                color: #b88624;
+                text-shadow: none;
             }
-
-            .banner-modelo img {
-                max-width: 520px;
-                height: 560px;
+            /* DEPOIMENTOS - Dourado sólido no rótulo Confiança */
+            .rotulo-confianca {
+                color: #b88624;
+                text-shadow: none;
             }
-
-            .banner-beneficios {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 430px;
-                row-gap: 15px;
+            /* ANTES E DEPOIS - Dourado metálico nos nomes Antes e Depois */
+            .antes-depois-secao .slide-metade strong {
+                color: transparent;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
             }
-
-            .banner-beneficio:nth-child(2) {
-                border-right: none;
+            /* ANTES E DEPOIS - Aparência dourada dos indicadores do carrossel */
+            .antes-depois-secao .indicador {
+                border: 1px solid #b88624;
+                background: rgba(184, 134, 36, 0.25);
             }
-
-            .banner-beneficio:nth-child(3) {
-                padding-left: 0;
+            /* ANTES E DEPOIS - Destaque metálico do indicador ativo */
+            .antes-depois-secao .indicador.ativo {
+                border-color: #f4d76b;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+                box-shadow: 0 2px 7px rgba(214, 163, 19, 0.4);
             }
-        }
-
-        @media (max-width: 920px) {
-
-            .banner-principal {
-                min-height: auto;
+            /* PROFISSIONAL - Dourado metálico no rótulo Atendimento personalizado */
+            .profissional-chamada .rotulo {
+                color: transparent;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
             }
-
-            .banner-container {
-                min-height: auto;
-                padding-top: 70px;
-                grid-template-columns: 1fr;
+            /* GERAL - Aparência padrão dos títulos das seções */
+            .titulo-secao {
+                margin-top: 10px;
+                color: #0b0b0b;
+                font-size: clamp(2rem, 4vw, 3.25rem);
+                line-height: 1.1;
+            }
+            /* GERAL - Aparência padrão dos textos introdutórios */
+            .texto-secao {
+                max-width: 660px;
+                margin: 18px auto 0;
+                color: #666;
+            }
+            /* GERAL - Centralização dos cabeçalhos das seções */
+            .cabecalho-secao {
+                margin-bottom: 38px;
                 text-align: center;
             }
-
+            /* BOTÕES - Estrutura e aparência padrão */
+            .botao {
+                min-height: 50px;
+                padding: 0 22px;
+                border: 1px solid transparent;
+                border-radius: 5px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 9px;
+                font-weight: 800;
+                cursor: pointer;
+                white-space: nowrap;
+                transition:
+                    transform 0.2s,
+                    background 0.2s,
+                    color 0.2s,
+                    border-color 0.2s;
+            }
+            /* BOTÕES - Movimento ao passar o mouse */
+            .botao:hover {
+                transform: translateY(-2px);
+            }
+             /* BOTÕES - Preenchimento dourado metálico */
+            .botao-dourado {
+                color: #111;
+                border: 1px solid #f4d76b;
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+                    0 4px 12px rgba(214, 163, 19, 0.25);
+            }
+             /* BOTÕES - Brilho metálico ao passar o mouse */
+            .botao-dourado:hover {
+                background: linear-gradient(
+                    135deg,
+                    #a46c00 0%,
+                    #e0a719 18%,
+                    #fff0a3 45%,
+                    #e1b62b 65%,
+                    #b47b05 100%
+                );
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+                    0 6px 18px rgba(214, 163, 19, 0.4);
+            }
+            /* BOTÕES - Aparência do botão com contorno */
+            .botao-contorno {
+                color: #fff;
+                border-color: #c6a15b;
+                background: transparent;
+            }
+            /* BOTÕES - Preenchimento do botão com contorno no hover */
+            .botao-contorno:hover {
+                color: #0b0b0b;
+                background: #c6a15b;
+            }
+            /* BOTÕES - Cor oficial do botão do WhatsApp */
+            .botao-whatsapp {
+                color: #fff;
+                background: #25d366;
+            }
+             /* HEADER - Estrutura fixa no topo da página */
+            .cabecalho {
+                position: fixed;
+                inset: 0 0 auto;
+                z-index: 1000;
+                background: rgba(11, 11, 11, 0.96);
+                border-bottom: 1px solid #343434;
+                backdrop-filter: blur(12px);
+            }
+            /* HEADER - Alinhamento da logo, menu e botões */
+            .cabecalho-conteudo {
+                min-height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 24px;
+            }
+            /* HEADER - Área ocupada pela logo */
+            .logo {
+                flex: 0 0 220px;
+                overflow: visible;
+            }
+            /* HEADER - Tamanho e posicionamento da imagem da logo */
+            .logo img {
+                width: 280px;
+                height: 132px;
+                object-fit: contain;
+                transform: translateY(5px) scale(1.35);
+                transform-origin: center;
+            }
+            /* HEADER - Organização geral da navegação */
+            .navegacao {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 24px;
+            }
+             /* HEADER - Distribuição proporcional dos links do menu */
+            .menu {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                gap: 0;
+                list-style: none;
+                white-space: nowrap;
+            }
+            /* HEADER - Aparência dos links do menu */
+            .menu a {
+                position: relative;
+                color: #ddd;
+                font-size: 0.78rem;
+                font-weight: 800;
+                letter-spacing: 0.04em;
+            }
+            /* HEADER - Traço dourado metálico abaixo dos links */
+            .menu a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 100%;
+                bottom: -8px;
+                height: 2px;
+                background: linear-gradient(
+                    90deg,
+                    #8a5a00,
+                    #d6a313,
+                    #fff0a3,
+                    #d6a313,
+                    #8a5a00
+                );
+                transition: right 0.25s;
+            }
+            /* HEADER - Cor dos links ativos e no hover */
+            .menu a:hover,
+            .menu a[aria-current="page"] {
+                color: #fff;
+            }
+            /* HEADER - Exibição do traço no link ativo e no hover */
+            .menu a:hover::after,
+            .menu a[aria-current="page"]::after {
+                right: 0;
+            }
+            /* HEADER - Botão de abertura do menu mobile */
+            .menu-botao {
+                display: none;
+                width: 46px;
+                height: 46px;
+                border: 1px solid #343434;
+                border-radius: 5px;
+                color: #fff;
+                background: #181818;
+                cursor: pointer;
+            }
+             /* BANNER - Estrutura e fundo principal */
+            .banner {
+                min-height: 720px;
+                padding-top: 90px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                color: #fff;
+                background: radial-gradient(
+                    circle at 78% 45%,
+                    #28231c 0,
+                    #181818 30%,
+                    #0b0b0b 66%
+                );
+                overflow: hidden;
+            }
+            /* BANNER - Divisão entre conteúdo e modelo */
+            .banner-grade {
+                min-height: 642px;
+                position: relative;
+                z-index: 2;
+                display: grid;
+                grid-template-columns: 1.08fr 0.92fr;
+                align-items: center;
+            }
+            /* BANNER - Posicionamento do conteúdo textual */
             .banner-conteudo {
-                padding-bottom: 15px;
+                max-width: 680px;
+                padding: 70px 0;
+                position: relative;
+                z-index: 3;
             }
-
-            .banner-titulo,
-            .banner-descricao {
-                margin-left: auto;
-                margin-right: auto;
+            /* BANNER - Aparência do título principal */
+            .banner h1 {
+                margin: 16px 0 22px;
+                font-size: clamp(2.8rem, 5.6vw, 5.2rem);
+                line-height: 0.98;
+                letter-spacing: -0.04em;
             }
-
+            /* BANNER - Dourado metálico no rótulo e destaque do título */
+            .banner .rotulo,
+            .banner h1 span {
+                color: #d6a313;
+                background: linear-gradient(
+                    90deg,
+                    #9a6500 0%,
+                    #d6a313 25%,
+                    #fff0a3 50%,
+                    #d6a313 75%,
+                    #9a6500 100%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            /* BANNER - Aparência do texto descritivo */
+            .banner p {
+                max-width: 630px;
+                color: #d2d2d2;
+                font-size: 1.08rem;
+            }
+            /* BANNER - Organização dos botões principais */
             .banner-botoes {
-                justify-content: center;
+                margin-top: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
             }
-
-            .banner-beneficios {
-                margin: 0 auto;
-                text-align: left;
+            /* BANNER - Distribuição das redes sociais abaixo dos botões */
+            .banner-redes {
+                width: 435px;
+                max-width: 100%;
+                margin-top: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 15px;
             }
+            /* BANNER - Aparência individual dos ícones sociais */
+            .banner-rede {
+                width: 52px;
+                height: 52px;
+                border: 1px solid #555;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: #ffffff;
+                background: rgba(255, 255, 255, 0.04);
+                font-size: 1.55rem;
 
-            .banner-modelo {
-                height: 500px;
-                justify-content: center;
+                transition:
+                    transform 0.25s,
+                    border-color 0.25s,
+                    box-shadow 0.25s;
             }
-
-            .banner-modelo img {
-                width: 100%;
-                max-width: 530px;
-                height: 500px;
-                object-position: bottom center;
+            /* BANNER - Movimento e contorno ao passar o mouse */
+            .banner-rede:hover {
+                border-color: #d6a313;
+                transform: translateY(-4px);
+                box-shadow: 0 6px 16px rgba(214, 163, 19, 0.3);
             }
-
-            .banner-principal::after {
-                width: 90%;
-                right: 5%;
-                bottom: 35px;
-            }
-        }
-
-        @media (max-width: 620px) {
-
-            .banner-principal {
-                margin-top: 76px;
-            }
-
-            .banner-container {
-                padding: 50px 18px 0;
-            }
-
-            .banner-etiqueta {
-                font-size: 11px;
-                letter-spacing: 1.5px;
-            }
-
-            .banner-titulo {
-                font-size: 40px;
-                letter-spacing: -1px;
-            }
-
-            .banner-subtitulo {
-                margin-top: 8px;
-                font-size: 23px;
-            }
-
-            .banner-descricao {
-                font-size: 15px;
-                line-height: 1.55;
-            }
-
-            .banner-botoes {
-                flex-direction: column;
-            }
-
-            .banner-botao {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            .banner-beneficios {
-                width: 100%;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 16px 0;
-            }
-
-            .banner-beneficio {
-                padding: 0 10px;
-            }
-
-            .banner-beneficio:nth-child(odd) {
-                padding-left: 0;
-            }
-
-            .banner-modelo {
-                height: 405px;
-                margin-top: 20px;
-            }
-
-            .banner-modelo img {
-                max-width: 430px;
-                height: 405px;
-            }
-        }
-
-        @media (max-width: 390px) {
-
-            .banner-titulo {
-                font-size: 34px;
-            }
-
-            .banner-subtitulo {
-                font-size: 20px;
-            }
-
-            .banner-beneficio-icone {
-                width: 25px;
-                font-size: 21px;
-            }
-
-            .banner-beneficio-texto strong {
-                font-size: 9px;
-            }
-
-            .banner-beneficio-texto span {
-                font-size: 9px;
-            }
-
-            .banner-modelo {
-                height: 350px;
-            }
-
-            .banner-modelo img {
-                height: 350px;
-            }
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-
-    <!-- ========================================================= -->
-    <!-- 03 - HEADER                                                -->
-    <!-- ========================================================= -->
-
-    <header class="header">
-
-        <div class="header-container">
-
-            <!-- Logo principal -->
-
-            <a
-                href="index.html"
-                class="header-logo"
-                aria-label="Voltar para a página inicial">
-
-                <img
-                    src="assets/imagens/logo/logo-drprotese.png"
-                    alt="Dr Prótese Capilar">
-
-            </a>
-
-
-            <!-- Menu principal -->
-
-            <nav
-                class="menu-principal"
-                id="menuPrincipal"
-                aria-label="Menu principal">
-
-                <a href="index.html" class="ativo">Home</a>
-
-                <a href="proteses.html">Próteses</a>
-
-                <a href="antes-e-depois.html">Antes e Depois</a>
-
-                <a href="sobre.html">Sobre</a>
-
-                <a href="depoimentos.html">Depoimentos</a>
-
-                <a href="contato.html">Contato</a>
-
-            </nav>
-
-
-            <!-- Botões do header -->
-
-            <div class="header-acoes">
-
-                <a
-                    href="contato.html"
-                    class="botao-agendar">
-
-                    <img
-                        src="assets/icones/calendario.svg"
-                        alt=""
-                        class="icone-botao">
-
-                    Agendar Avaliação
-
-                </a>
-
-                <a
-                    href="https://wa.me/5583986934230"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="botao-whatsapp"
-                    aria-label="Falar pelo WhatsApp">
-
-                    <img
-                        src="assets/icones/whatsapp.svg"
-                        alt=""
-                        class="icone-whatsapp">
-
-                </a>
-
-            </div>
-
-
-            <!-- Botão do menu mobile -->
-
-            <button
-                class="botao-menu-mobile"
-                id="botaoMenuMobile"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="menuPrincipal">
-
-                ☰
-
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- ========================================================= -->
-    <!-- CONTEÚDO PRINCIPAL                                         -->
-    <!-- ========================================================= -->
-
-    <main>
-
-
-        <!-- ===================================================== -->
-        <!-- 04 - BANNER PRINCIPAL                                 -->
-        <!-- ===================================================== -->
-
-        <section
-            class="banner-principal"
-            aria-labelledby="tituloBanner">
-
-
-            <div class="banner-container">
-
-
-                <!-- ============================================= -->
-                <!-- CONTEÚDO DO BANNER                            -->
-                <!-- ============================================= -->
-
-                <div class="banner-conteudo">
-
-                    <p class="banner-etiqueta">
-                        Prótese Capilar Masculina
-                    </p>
-
-                    <h1 class="banner-titulo" id="tituloBanner">
-
-                        Transforme sua
-
-                        <span>autoestima</span>
-
-                        <small class="banner-subtitulo">
-                            com prótese capilar<br>
-                            de aparência natural
-                        </small>
-
-                    </h1>
-
-                    <p class="banner-descricao">
-                        Resultados naturais, discretos e personalizados
-                        para você recuperar sua confiança e renovar sua aparência.
-                    </p>
-
-
-                    <!-- Botões principais do banner -->
-
-                    <div class="banner-botoes">
-
-                        <a
-                            href="contato.html"
-                            class="banner-botao banner-botao-principal">
-
-                            <img
-                                src="assets/icones/calendario.svg"
-                                alt="">
-
-                            Agendar avaliação
-
-                        </a>
-
-                        <a
-                            href="https://wa.me/5583986934230"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="banner-botao banner-botao-whatsapp">
-
-                            <img
-                                src="assets/icones/whatsapp.svg"
-                                alt="">
-
-                            Falar no WhatsApp
-
-                        </a>
-
-                    </div>
-
-
-                    <!-- Benefícios apresentados no banner -->
-
-                    <div
-                        class="banner-beneficios"
-                        aria-label="Principais benefícios">
-
-
-                        <div class="banner-beneficio">
-
-                            <div
-                                class="banner-beneficio-icone"
-                                aria-hidden="true">
-
-                                ◇
-
-                            </div>
-
-                            <div class="banner-beneficio-texto">
-
-                                <strong>Natural</strong>
-
-                                <span>
-                                    e imperceptível
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="banner-beneficio">
-
-                            <div
-                                class="banner-beneficio-icone"
-                                aria-hidden="true">
-
-                                ♢
-
-                            </div>
-
-                            <div class="banner-beneficio-texto">
-
-                                <strong>Confortável</strong>
-
-                                <span>
-                                    leve e discreta
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="banner-beneficio">
-
-                            <div
-                                class="banner-beneficio-icone"
-                                aria-hidden="true">
-
-                                ◷
-
-                            </div>
-
-                            <div class="banner-beneficio-texto">
-
-                                <strong>Resultados</strong>
-
-                                <span>
-                                    imediatos
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="banner-beneficio">
-
-                            <div
-                                class="banner-beneficio-icone"
-                                aria-hidden="true">
-
-                                ♙
-
-                            </div>
-
-                            <div class="banner-beneficio-texto">
-
-                                <strong>Atendimento</strong>
-
-                                <span>
-                                    personalizado
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ============================================= -->
-                <!-- IMAGEM DO MODELO                              -->
-                <!-- ============================================= -->
-
-                <div class="banner-modelo">
-
-                    <img
-                        src="assets/imagens/home/modelo-home.webp"
-                        alt="Modelo masculino com cabelo volumoso e aparência natural"
-                        width="620"
-                        height="760"
-                        fetchpriority="high">
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ========================================================= -->
-    <!-- JAVASCRIPT DO MENU MOBILE                                  -->
-    <!-- ========================================================= -->
-
-    <script>
-
-        const botaoMenuMobile =
-            document.getElementById("botaoMenuMobile");
-
-        const menuPrincipal =
-            document.getElementById("menuPrincipal");
-
-
-        botaoMenuMobile.addEventListener("click", function () {
-
-            const menuEstaAberto =
-                menuPrincipal.classList.toggle("ativo");
-
-            botaoMenuMobile.setAttribute(
-                "aria-expanded",
-                menuEstaAberto
-            );
-
-            botaoMenuMobile.textContent =
-                menuEstaAberto ? "✕" : "☰";
-
-        });
-
-
-        /* Fecha o menu ao clicar em um dos links */
-
-        const linksDoMenu =
-            menuPrincipal.querySelectorAll("a");
-
-
-        linksDoMenu.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                menuPrincipal.classList.remove("ativo");
-
-                botaoMenuMobile.setAttribute(
-                    "aria-expanded",
-                    "false"
+            /* BANNER - Dourado metálico no símbolo ao passar o mouse */
+            .banner-rede:hover i {
+                color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
                 );
 
-                botaoMenuMobile.textContent = "☰";
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 
+                filter: drop-shadow(0 2px 5px rgba(214, 163, 19, 0.35));
+            }
+            /* BANNER - Tamanho e posicionamento da imagem do modelo */
+            .banner-modelo {
+                position: absolute;
+                z-index: 2;
+                right: -140px;
+                bottom: 0;
+                width: min(76vw, 1050px);
+                max-height: 850px;
+                object-fit: contain;
+                object-position: bottom right;
+                transform: translateY(70px);
+                filter: drop-shadow(-20px 15px 30px rgba(0, 0, 0, 0.45));
+            }
+            /* VÍDEO - Fundo da seção institucional */
+            .video-secao {
+                background: #fff;
+            }
+            /* VÍDEO - Moldura externa do vídeo institucional */
+            .video-moldura {
+                max-width: 900px;
+                aspect-ratio: 16/9;
+                margin: 0 auto;
+                padding: 10px;
+                border: 1px solid #d8c49c;
+                border-radius: 10px;
+                background: #0b0b0b;
+                box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+            }
+            /* VÍDEO - Ajuste do vídeo dentro da moldura */
+            .video-moldura video {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                object-fit: cover;
+                background: #181818;
+            }
+            /* PRÓTESES - Fundo escuro da apresentação */
+            .proteses-chamada {
+                color: #fff;
+                background: #181818;
+            }
+            /* PRÓTESES - Cor do título da seção */
+            .proteses-chamada .titulo-secao {
+                color: #fff;
+            }
+            /* PRÓTESES - Cor do texto introdutório */
+            .proteses-chamada .texto-secao {
+                color: #a9a9a9;
+            }
+             /* PRÓTESES - Organização dos três benefícios */
+            .beneficios {
+                max-width: 900px;
+                margin: 34px auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+            /* PRÓTESES - Aparência individual dos cartões de benefícios */
+            .beneficio {
+                padding: 24px;
+                text-align: center;
+                border: 1px solid #343434;
+                border-radius: 7px;
+                background: #202020;
+            }
+            /* PRÓTESES - Estrutura circular dos ícones */
+            .beneficio-icone {
+                width: 42px;
+                height: 42px;
+                margin: 0 auto 13px;
+                border: 1px solid #c6a15b;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: #c6a15b;
+                font-weight: 900;
+            }
+            /* GERAL - Centralização dos botões de ação */
+            .acao-central {
+                text-align: center;
+            }
+            /* GERAL - Espaçamento superior adicional das ações */
+            .acao-com-espaco {
+                margin-top: 28px;
+            }
+            /* ANTES E DEPOIS - Estrutura externa do carrossel */
+            .carrossel {
+                max-width: 900px;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                background: #181818;
+            }
+            /* ANTES E DEPOIS - Trilho móvel dos slides */
+            .carrossel-trilho {
+                display: flex;
+                transition: transform 0.45s ease;
+            }
+            /* ANTES E DEPOIS - Estrutura individual de cada slide */
+            .slide {
+                min-width: 100%;
+                aspect-ratio: 16/7;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            /* ANTES E DEPOIS - Divisão visual entre Antes e Depois */
+            .slide-metade {
+                display: grid;
+                place-items: center;
+                color: #a9a9a9;
+                background: linear-gradient(135deg, #242424, #101010);
+                border-right: 1px solid #343434;
+                text-align: center;
+            }
+            /* ANTES E DEPOIS - Aparência padrão dos nomes dos resultados */
+            .slide-metade strong {
+                display: block;
+                color: #c6a15b;
+                font-size: 1.1rem;
+            }
+            /* ANTES E DEPOIS - Aparência dos controles laterais */
+            .carrossel-controle {
+                width: 44px;
+                height: 44px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                border: 1px solid #c6a15b;
+                border-radius: 50%;
+                color: #fff;
+                background: rgba(11, 11, 11, 0.8);
+                cursor: pointer;
+            }
+            /* ANTES E DEPOIS - Posicionamento do controle anterior */
+            .carrossel-anterior {
+                left: 14px;
+            }
+            /* ANTES E DEPOIS - Posicionamento do próximo controle */
+            .carrossel-proximo {
+                right: 14px;
+            }
+            /* ANTES E DEPOIS - Organização das bolinhas indicadoras */
+            .indicadores {
+                margin: 18px 0 28px;
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+            }
+            /* ANTES E DEPOIS - Aparência padrão de cada indicador */
+            .indicador {
+                width: 9px;
+                height: 9px;
+                border: 0;
+                border-radius: 50%;
+                background: #a9a9a9;
+                cursor: pointer;
+            }
+            /* ANTES E DEPOIS - Ampliação do indicador ativo */
+            .indicador.ativo {
+                background: #c6a15b;
+                transform: scale(1.25);
+            }
+           /* PROFISSIONAL - Botão transparente com contorno dourado metálico */
+            .profissional-chamada .botao-contorno {
+                position: relative;
+                color: #ffffff;
+                border: 1px solid transparent;
+                background: transparent;
+                box-shadow: none;
+            }
+            /* PROFISSIONAL - Construção do contorno metálico do botão */
+            .profissional-chamada .botao-contorno::before {
+                content: "";
+                position: absolute;
+                inset: -1px;
+                padding: 1px;
+                border-radius: 5px;
+                pointer-events: none;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                -webkit-mask:
+                    linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+            /* PROFISSIONAL - Preenchimento dourado metálico no hover */
+            .profissional-chamada .botao-contorno:hover {
+                color: #111111;
+                border-color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+                    0 6px 18px rgba(214, 163, 19, 0.4);
+            }
+             /* PROFISSIONAL - Fundo e espaçamento da chamada */
+            .profissional-chamada {
+                padding: 68px 0;
+                color: #fff;
+                background: linear-gradient(110deg, #0b0b0b, #202020);
+            }
+            /* PROFISSIONAL - Distribuição do texto e botão */
+            .profissional-grade {
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                gap: 35px;
+            }
+            /* PROFISSIONAL - Aparência do título principal */
+            .profissional-chamada h2 {
+                margin: 8px 0 12px;
+                font-size: clamp(2rem, 4vw, 3.1rem);
+                line-height: 1.1;
+            }
+            /* PROFISSIONAL - Aparência do texto descritivo */
+            .profissional-chamada p {
+                max-width: 720px;
+                color: #a9a9a9;
+            }
+            /* DEPOIMENTOS - Organização dos três cartões */
+            .depoimentos-grade {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            /* DEPOIMENTOS - Aparência individual de cada cartão */
+            .depoimento {
+                min-height: 185px;
+                padding: 28px;
+                border: 1px solid #ddd;
+                border-top: 3px solid #b88624;
+                border-radius: 7px;
+                background: #fff;
+            }
+            /* DEPOIMENTOS - Dourado sólido nas estrelas */
+            .depoimento span {
+                color: #b88624;
+                font-size: 1.3rem;
+            }
+            /* DEPOIMENTOS - Aparência do texto de cada relato */
+            .depoimento p {
+                margin-top: 13px;
+                color: #777;
+                font-style: italic;
+            }
+            /* LOCALIZAÇÃO - Fundo escuro e cor geral da seção */
+            .localizacao {
+                color: #fff;
+                background: #181818;
+            }
+            /* LOCALIZAÇÃO - Cor do título principal */
+            .localizacao .titulo-secao {
+                color: #fff;
+            }
+            /* LOCALIZAÇÃO - Dourado metálico no rótulo */
+            .localizacao .rotulo {
+                color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
+            }
+            /* LOCALIZAÇÃO - Distribuição das informações e do mapa */
+            .localizacao-grade {
+                display: grid;
+                grid-template-columns: 0.75fr 1.25fr;
+                gap: 30px;
+                align-items: stretch;
+            }
+            /* LOCALIZAÇÃO - Aparência do cartão de informações */
+            .localizacao-info {
+                padding: 38px;
+                border: 1px solid #343434;
+                border-radius: 8px;
+                background: #202020;
+            }
+            /* LOCALIZAÇÃO - Espaçamento do nome da cidade */
+            .localizacao-info h3 {
+                margin: 12px 0;
+                font-size: 1.8rem;
+            }
+            /* LOCALIZAÇÃO - Aparência dos dados de endereço */
+            .localizacao-info p {
+                margin-bottom: 24px;
+                color: #c8c8c8;
+            }
+            /* LOCALIZAÇÃO - Moldura externa do mapa */
+            .mapa {
+                min-height: 370px;
+                overflow: hidden;
+                border: 1px solid #343434;
+                border-radius: 8px;
+            }
+            /* LOCALIZAÇÃO - Ajuste do mapa incorporado */
+            .mapa iframe {
+                width: 100%;
+                height: 100%;
+                min-height: 370px;
+                border: 0;
+            }
+            /* CHAMADA FINAL - Estrutura e fundo da seção */
+            .chamada-final {
+                padding: 76px 0;
+                text-align: center;
+                color: #111;
+                background: #fff;
+            }
+            /* CHAMADA FINAL - Aparência do título */
+            .chamada-final h2 {
+                font-size: clamp(2.2rem, 5vw, 4rem);
+                line-height: 1.05;
+            }
+            /* CHAMADA FINAL - Aparência do texto */
+            .chamada-final p {
+                margin: 16px 0 28px;
+                color: #555;
+            }
+            /* CHAMADA FINAL - Organização dos botões */
+            .chamada-final-botoes {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            /* RODAPÉ - Estrutura principal e fundo */
+            .rodape {
+                padding: 60px 0 24px;
+                color: #a9a9a9;
+                background: #080808;
+                border-top: 1px solid #343434;
+            }
+            /* RODAPÉ - Organização das quatro colunas */
+            .rodape-grade {
+                display: grid;
+                grid-template-columns: 1.3fr 0.7fr 1fr 1fr;
+                gap: 38px;
+            }
+            /* RODAPÉ - Tamanho e espaçamento da logo */
+            .rodape-logo {
+                width: 280px;
+                margin-bottom: 15px;
+            }
+            /* RODAPÉ - Dourado metálico nos títulos das colunas */
+            .rodape h3 {
+                margin-bottom: 15px;
+                color: transparent;
+                font-size: 1rem;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
+            }
+            /* RODAPÉ - Remoção dos marcadores das listas */
+            .rodape ul {
+                list-style: none;
+            }
+            /* RODAPÉ - Espaçamento entre os itens das listas */
+            .rodape li {
+                margin-bottom: 8px;
+            }
+            /* RODAPÉ - Dourado padrão dos links no hover */
+            .rodape a:hover {
+                color: #c6a15b;
+            }
+            /* RODAPÉ - Dourado metálico no telefone e e-mail no hover */
+            .rodape-contato a:hover {
+                color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.25);
+            }
+            /* RODAPÉ - Dourado metálico nos links de navegação no hover */
+            .rodape-navegacao a:hover {
+                color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                text-shadow: 0 2px 8px rgba(214, 163, 19, 0.2);
+            }
+            /* RODAPÉ - Organização dos ícones das redes sociais */
+            .redes {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 9px;
+            }
+            /* RODAPÉ - Aparência individual dos ícones sociais */
+            .rede {
+                width: 38px;
+                height: 38px;
+                border: 1px solid #343434;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: #fff;
+                font-size: 1.15rem;
+                font-weight: 800;
+            }
+            /* RODAPÉ - Dourado metálico nos ícones sociais no hover */
+            .rede:hover i {
+                color: transparent;
+
+                background: linear-gradient(
+                    135deg,
+                    #8a5a00 0%,
+                    #c88b08 18%,
+                    #ffe477 45%,
+                    #d6a313 65%,
+                    #9a6500 100%
+                );
+
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                filter: drop-shadow(0 2px 5px rgba(214, 163, 19, 0.35));
+            }
+            /* RODAPÉ - Linha divisória e direitos autorais */
+            .rodape-base {
+                margin-top: 42px;
+                padding-top: 20px;
+                border-top: 1px solid #222;
+                text-align: center;
+                font-size: 0.85rem;
+            }
+            /* WHATSAPP FLUTUANTE - Estrutura, posição e animação */
+            .whatsapp-flutuante {
+                width: 58px;
+                height: 58px;
+                position: fixed;
+                z-index: 1100;
+                right: 20px;
+                bottom: 20px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: #fff;
+                background: #25d366;
+                box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+                font-weight: 900;
+                animation: pulso 2.2s infinite;
+            }
+            /* WHATSAPP FLUTUANTE - Tamanho do símbolo */
+            .whatsapp-flutuante i {
+                font-size: 2rem;
+            }
+            /* WHATSAPP FLUTUANTE - Animação de pulsação */
+            @keyframes pulso {
+                50% {
+                    box-shadow:
+                        0 0 0 10px rgba(37, 211, 102, 0.12),
+                        0 10px 28px rgba(0, 0, 0, 0.28);
+                }
+            }
+            /* RESPONSIVIDADE TABLET - Ajustes para telas de até 992px */
+            @media (max-width: 992px) {
+                /* RESPONSIVIDADE TABLET - Exibição do botão do menu mobile */
+                .menu-botao {
+                    display: block;
+                }
+                /* RESPONSIVIDADE TABLET - Ocultação do botão de agendamento do header */
+                .navegacao .botao {
+                    display: none;
+                }
+                /* RESPONSIVIDADE TABLET - Transformação do menu em painel vertical */
+                .menu {
+                    width: 100%;
+                    padding: 20px;
+                    position: absolute;
+                    top: 90px;
+                    left: 0;
+                    display: none;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    background: #0b0b0b;
+                    border-top: 1px solid #343434;
+                }
+                /* RESPONSIVIDADE TABLET - Exibição do menu quando estiver aberto */
+                .menu.aberto {
+                    display: flex;
+                }
+                /* RESPONSIVIDADE TABLET - Aumento dos links do menu */
+                .menu a {
+                    font-size: 0.9rem;
+                }
+                /* RESPONSIVIDADE TABLET - Altura do banner */
+                .banner {
+                    min-height: 690px;
+                }
+                /* RESPONSIVIDADE TABLET - Organização do banner em uma coluna */
+                .banner-grade {
+                    grid-template-columns: 1fr;
+                    align-items: flex-start;
+                }
+                /* RESPONSIVIDADE TABLET - Limite e posição do conteúdo do banner */
+                .banner-conteudo {
+                    max-width: 58%;
+                    padding-top: 110px;
+                }
+                /* RESPONSIVIDADE TABLET - Tamanho e posição do modelo */
+                .banner-modelo {
+                    right: -130px;
+                    width: 70vw;
+                }
+                /* RESPONSIVIDADE TABLET - Organização do rodapé em duas colunas */
+                .rodape-grade {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            /* RESPONSIVIDADE CELULAR - Ajustes para telas de até 768px */
+            @media (max-width: 768px) {
+                /* RESPONSIVIDADE CELULAR - Redução do espaçamento das seções */
+                .secao {
+                    padding: 65px 0;
+                }
+                /* RESPONSIVIDADE CELULAR - Altura automática do banner */
+                .banner {
+                    min-height: auto;
+                    align-items: flex-start;
+                }
+                /* RESPONSIVIDADE CELULAR - Remoção da altura mínima da grade */
+                .banner-grade {
+                    min-height: 0;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização e espaço reservado ao modelo */
+                .banner-conteudo {
+                    max-width: 100%;
+                    padding: 68px 0 300px;
+                    text-align: center;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização do texto do banner */
+                .banner p {
+                    max-width: 540px;
+                    margin: 0 auto;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização dos botões do banner */
+                .banner-botoes {
+                    justify-content: center;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização das redes sociais */
+                .banner-redes {
+                    justify-content: center;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização visual do modelo */
+                .banner-modelo {
+                    right: 65%;
+                    bottom: -42px;
+                    width: min(92vw, 520px);
+                    max-height: 410px;
+                    transform: translateX(50%);
+                    object-position: bottom center;
+                    opacity: 1;
+                }
+                /* RESPONSIVIDADE CELULAR - Fundo escuro limitado à área dos textos */
+                .banner-conteudo::after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    inset: 45px -15px 430px;
+                    background: linear-gradient(
+                        #0b0b0b 55%,
+                        rgba(11, 11, 11, 0.28)
+                    );
+                }
+                /* RESPONSIVIDADE CELULAR - Organização dos cartões em uma coluna */
+                .beneficios,
+                .depoimentos-grade {
+                    grid-template-columns: 1fr;
+                }
+                /* RESPONSIVIDADE CELULAR - Proporção do carrossel */
+                .slide {
+                    aspect-ratio: 4/3;
+                }
+                /* RESPONSIVIDADE CELULAR - Organização das grades em uma coluna */
+                .profissional-grade,
+                .localizacao-grade {
+                    grid-template-columns: 1fr;
+                }
+                /* RESPONSIVIDADE CELULAR - Centralização da chamada profissional */
+                .profissional-grade {
+                    text-align: center;
+                }
+                /* RESPONSIVIDADE CELULAR - Organização do rodapé em uma coluna */
+                .rodape-grade {
+                    grid-template-columns: 1fr;
+                }
+            }
+            /* RESPONSIVIDADE CELULAR PEQUENO - Ajustes para telas de até 480px */
+            @media (max-width: 480px) {
+                /* RESPONSIVIDADE CELULAR PEQUENO - Margens laterais do conteúdo */
+                .conteiner {
+                    width: min(100% - 28px, 1180px);
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Redução da logo do header */
+                .logo img {
+                    width: 125px;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Redução do título do banner */
+                .banner h1 {
+                    font-size: 2.6rem;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Botões ocupando toda a largura */
+                .banner-botoes .botao,
+                .chamada-final-botoes .botao {
+                    width: 100%;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Ampliação proporcional do modelo */
+                .banner-modelo {
+                    width: 105vw;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Carrossel em formato quadrado */
+                .slide {
+                    aspect-ratio: 1/1;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Redução do espaço do endereço */
+                .localizacao-info {
+                    padding: 28px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEADER - Estrutura fixa de navegação -->
+        <header class="cabecalho">
+            <div class="conteiner cabecalho-conteudo">
+                <!-- HEADER - Logo com retorno à página inicial -->
+                <a
+                    class="logo"
+                    href="index.html"
+                    aria-label="Dr Prótese Capilar - página inicial"
+                >
+                    <img
+                        src="assets/imagens/logo/logo-principal.png"
+                        alt="Logo Dr Prótese Capilar"
+                    />
+                </a>
+                <!-- HEADER - Menu principal, agendamento e controle mobile -->
+                <nav class="navegacao" aria-label="Navegação principal">
+                    <ul class="menu" id="menu-principal">
+                        <li><a href="index.html" aria-current="page">HOME</a></li>
+                        <li><a href="proteses.html">PRÓTESES</a></li>
+                        <li><a href="antes-depois.html">ANTES E DEPOIS</a></li>
+                        <li><a href="sobre.html">SOBRE</a></li>
+                        <li><a href="depoimentos.html">DEPOIMENTOS</a></li>
+                        <li><a href="contato.html">CONTATO</a></li>
+                    </ul>
+                    <a class="botao botao-dourado" href="contato.html">
+                        Agendar Avaliação
+                    </a>
+                    <button
+                        class="menu-botao"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="menu-principal"
+                        aria-label="Abrir menu"
+                    >
+                        ☰
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- BANNER - Apresentação principal da página -->
+            <section class="banner">
+                <div class="conteiner banner-grade">
+                    <!-- BANNER - Rótulo, título, descrição e ações -->
+                    <div class="banner-conteudo">
+                        <span class="rotulo">Prótese capilar masculina</span>
+                        <h1>
+                            Recupere sua confiança.
+                            <span>Renove sua imagem.</span>
+                        </h1>
+                        <p>
+                            Soluções personalizadas em prótese capilar masculina para um
+                            resultado natural, confortável e alinhado ao seu estilo.
+                        </p>
+                        <!-- BANNER - Botões principais -->
+                    <div class="banner-botoes">
+                        <a class="botao botao-dourado" href="contato.html">
+                            Agendar Avaliação
+                        </a>
+
+                        <a
+                            class="botao botao-whatsapp"
+                            href="https://wa.me/5583986934230?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20sobre%20pr%C3%B3tese%20capilar."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- BANNER - Redes sociais -->
+                    <div
+                        class="banner-redes"
+                        aria-label="Redes sociais do Dr Prótese Capilar"
+                    >
+                        <a
+                            class="banner-rede"
+                            href="https://www.instagram.com/drprotesecapilaroficial/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a
+                            class="banner-rede"
+                            href="https://www.facebook.com/drprotesecapilaroficial/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                        >
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a
+                            class="banner-rede"
+                            href="https://www.tiktok.com/@drprotesecapilaroficial"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="TikTok"
+                        >
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+
+                        <a
+                            class="banner-rede"
+                            href="https://www.youtube.com/@drprotesecapilaroficial"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="YouTube"
+                        >
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                    </div>
+                    <!-- BANNER - Imagem do modelo -->
+                    <img
+                        class="banner-modelo"
+                        src="assets/imagens/home/modelo-home.webp"
+                        alt="Modelo masculino com cabelo bem cuidado"
+                    />
+                </div>
+            </section>
+
+            <!-- VÍDEO - Apresentação institucional -->
+            <section class="secao video-secao">
+                <div class="conteiner">
+                    <!-- VÍDEO - Cabeçalho da seção -->
+                    <header class="cabecalho-secao">
+                        <span class="rotulo">Nossa essência</span>
+                        <h2 class="titulo-secao">Conheça o Dr Prótese Capilar</h2>
+                        <p class="texto-secao">
+                            Naturalidade, cuidado e atendimento personalizado em cada
+                            transformação.
+                        </p>
+                    </header>
+                    <!-- VÍDEO - Player do vídeo institucional -->
+                    <div class="video-moldura">
+                        <video controls preload="metadata">
+                            <source
+                                src="assets/videos/video-institucional.mp4"
+                                type="video/mp4"
+                            />
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                        <!-- VÍDEO - Substituir o arquivo acima pelo vídeo institucional definitivo -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- PRÓTESES - Apresentação resumida das soluções -->
+            <section class="secao proteses-chamada">
+                <div class="conteiner">
+                    <!-- PRÓTESES - Cabeçalho da seção -->
+                    <header class="cabecalho-secao">
+                        <span class="rotulo">Soluções personalizadas</span>
+                        <h2 class="titulo-secao">Soluções que respeitam seu estilo</h2>
+                        <p class="texto-secao">
+                            Próteses capilares desenvolvidas para proporcionar
+                            naturalidade, segurança e liberdade em diferentes momentos do
+                            dia.
+                        </p>
+                    </header>
+                    <!-- PRÓTESES - Três benefícios principais -->
+                    <div class="beneficios">
+                        <article class="beneficio">
+                            <span class="beneficio-icone">✓</span>
+                            <h3>Aparência natural</h3>
+                        </article>
+                        <article class="beneficio">
+                            <span class="beneficio-icone">✓</span>
+                            <h3>Ajuste personalizado</h3>
+                        </article>
+                        <article class="beneficio">
+                            <span class="beneficio-icone">✓</span>
+                            <h3>Conforto e segurança</h3>
+                        </article>
+                    </div>
+                    <!-- PRÓTESES - Acesso à página completa -->
+                    <div class="acao-central">
+                        <a class="botao botao-dourado" href="proteses.html">
+                            Conhecer as Próteses
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ANTES E DEPOIS - Carrossel de resultados -->
+            <section class="secao antes-depois-secao">
+                <div class="conteiner">
+                    <!-- ANTES E DEPOIS - Cabeçalho da seção -->
+                    <header class="cabecalho-secao">
+                        <span class="rotulo">Resultados</span>
+                        <h2 class="titulo-secao">
+                            Transformações que devolvem confiança
+                        </h2>
+                        <p class="texto-secao">
+                            Veja como uma solução personalizada pode renovar a aparência
+                            sem perder a naturalidade.
+                        </p>
+                    </header>
+                    <!-- ANTES E DEPOIS - Área interativa do carrossel -->
+                    <div
+                        class="carrossel"
+                        tabindex="0"
+                        aria-label="Carrossel de antes e depois"
+                    >
+                        <!-- ANTES E DEPOIS - Trilho com os três resultados -->
+                        <div class="carrossel-trilho">
+                            <article class="slide">
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>ANTES</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>DEPOIS</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="slide">
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>ANTES</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>DEPOIS</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="slide">
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>ANTES</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                                <div class="slide-metade">
+                                    <div>
+                                        <strong>DEPOIS</strong>
+                                        Imagem a inserir
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- ANTES E DEPOIS - Controle para o resultado anterior -->
+                        <button
+                            class="carrossel-controle carrossel-anterior"
+                            type="button"
+                            aria-label="Resultado anterior"
+                        >
+                            ‹
+                        </button>
+                        <!-- ANTES E DEPOIS - Controle para o próximo resultado -->
+                        <button
+                            class="carrossel-controle carrossel-proximo"
+                            type="button"
+                            aria-label="Próximo resultado"
+                        >
+                            ›
+                        </button>
+                    </div>
+                    <!-- ANTES E DEPOIS - Indicadores dos resultados -->
+                    <div class="indicadores" aria-label="Selecionar resultado">
+                        <button
+                            class="indicador ativo"
+                            type="button"
+                            aria-label="Resultado 1"
+                        ></button>
+                        <button
+                            class="indicador"
+                            type="button"
+                            aria-label="Resultado 2"
+                        ></button>
+                        <button
+                            class="indicador"
+                            type="button"
+                            aria-label="Resultado 3"
+                        ></button>
+                    </div>
+                    <!-- ANTES E DEPOIS - Acesso à galeria completa -->
+                    <div class="acao-central">
+                        <a class="botao botao-dourado" href="antes-depois.html">
+                            Ver mais resultados
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROFISSIONAL - Apresentação resumida do especialista -->
+            <section class="profissional-chamada">
+                <div class="conteiner profissional-grade">
+                    <!-- PROFISSIONAL - Rótulo, título e descrição -->
+                    <div>
+                        <span class="rotulo">Atendimento personalizado</span>
+                        <h2>Experiência, atenção e cuidado</h2>
+                        <p>
+                            Conheça o profissional responsável por oferecer um atendimento
+                            próximo, personalizado e comprometido com resultados naturais.
+                        </p>
+                    </div>
+                    <!-- PROFISSIONAL - Acesso à página Sobre -->
+                    <a class="botao botao-contorno" href="sobre.html">
+                        Conheça o Profissional
+                    </a>
+                </div>
+            </section>
+
+            <!-- DEPOIMENTOS - Relatos provisórios de clientes -->
+            <section class="secao">
+                <div class="conteiner">
+                    <!-- DEPOIMENTOS - Cabeçalho da seção -->
+                    <header class="cabecalho-secao">
+                        <span class="rotulo rotulo-confianca">Confiança</span>
+                        <h2 class="titulo-secao">O que nossos clientes dizem</h2>
+                        <p class="texto-secao">
+                            Cada transformação representa uma nova história de confiança e
+                            bem-estar.
+                        </p>
+                    </header>
+                    <!-- DEPOIMENTOS - Três cartões de relatos -->
+                    <div class="depoimentos-grade">
+                        <article class="depoimento">
+                            <span>★★★★★</span>
+                            <p>
+                                Espaço reservado para inserir um depoimento real de
+                                cliente.
+                            </p>
+                        </article>
+                        <article class="depoimento">
+                            <span>★★★★★</span>
+                            <p>
+                                Espaço reservado para inserir um depoimento real de
+                                cliente.
+                            </p>
+                        </article>
+                        <article class="depoimento">
+                            <span>★★★★★</span>
+                            <p>
+                                Espaço reservado para inserir um depoimento real de
+                                cliente.
+                            </p>
+                        </article>
+                    </div>
+                     <!-- DEPOIMENTOS - Substituir os textos somente por relatos reais autorizados -->
+
+                     <!-- DEPOIMENTOS - Acesso à página completa -->
+                    <div class="acao-central acao-com-espaco">
+                        <a class="botao botao-dourado" href="depoimentos.html">
+                            Ver mais depoimentos
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOCALIZAÇÃO - Endereço e mapa interativo -->
+            <section class="secao localizacao">
+                <div class="conteiner">
+                    <!-- LOCALIZAÇÃO - Cabeçalho da seção -->
+                    <header class="cabecalho-secao">
+                        <span class="rotulo">Localização</span>
+                        <h2 class="titulo-secao">Estamos em Campina Grande-PB</h2>
+                    </header>
+                    <!-- LOCALIZAÇÃO - Grade com informações e mapa -->
+                    <div class="localizacao-grade">
+                        <!-- LOCALIZAÇÃO - Endereço e botão de rota -->
+                        <div class="localizacao-info">
+                            <span class="rotulo">Nosso endereço</span>
+                            <h3>Centro de Campina Grande</h3>
+                            <p>
+                                Rua Tiradentes, 109 – Centro
+                                <br />
+                                Campina Grande – PB
+                            </p>
+                            <p>Atendimento mediante agendamento.</p>
+                            <a
+                                class="botao botao-dourado"
+                                href="https://www.google.com/maps/search/?api=1&query=Rua+Tiradentes+109+Centro+Campina+Grande+PB"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Como chegar
+                            </a>
+                        </div>
+                        <!-- LOCALIZAÇÃO - Mapa incorporado do Google -->
+                        <div class="mapa">
+                            <iframe
+                                title="Mapa com a localização do Dr Prótese Capilar"
+                                src="https://www.google.com/maps?q=Rua%20Tiradentes%20109%20Centro%20Campina%20Grande%20PB&output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAMADA FINAL - Convite para agendamento -->
+            <section class="chamada-final">
+                <div class="conteiner">
+                    <h2>Pronto para renovar sua imagem?</h2>
+                    <p>
+                        Agende sua avaliação e descubra uma solução personalizada para
+                        você.
+                    </p>
+                    <!-- CHAMADA FINAL - Botões de contato -->
+                    <div class="chamada-final-botoes">
+                        <a class="botao botao-dourado" href="contato.html">
+                            Agendar Avaliação
+                        </a>
+                        <a
+                            class="botao botao-whatsapp"
+                            href="https://wa.me/5583986934230?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20sobre%20pr%C3%B3tese%20capilar."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- RODAPÉ - Informações institucionais e links -->
+        <footer class="rodape">
+            <div class="conteiner">
+                <!-- RODAPÉ - Grade com as quatro colunas -->
+                <div class="rodape-grade">
+                    <!-- RODAPÉ - Logo e descrição da empresa -->
+                    <div>
+                        <a
+                            href="index.html"
+                            aria-label="Dr Prótese Capilar - voltar à página inicial"
+                        >
+                            <img
+                                class="rodape-logo"
+                                src="assets/imagens/logo/logo-principal.png"
+                                alt="Logo Dr Prótese Capilar"
+                            />
+                        </a>
+                        <p>
+                            Soluções personalizadas em prótese capilar masculina com foco
+                            em naturalidade e confiança.
+                        </p>
+                    </div>
+                    <!-- RODAPÉ - Links de navegação -->
+                    <div class="rodape-navegacao">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="proteses.html">Próteses</a></li>
+                            <li><a href="antes-depois.html">Antes e Depois</a></li>
+                            <li><a href="sobre.html">Sobre</a></li>
+                            <li><a href="depoimentos.html">Depoimentos</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <!-- RODAPÉ - Telefone, e-mail e endereço -->
+                    <div class="rodape-contato">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://wa.me/5583986934230"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    +55 (83) 9 8693-4230
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:drprotesecapilarmasculina@gmail.com">
+                                    drprotesecapilarmasculina@gmail.com
+                                </a>
+                            </li>
+                            <li>Rua Tiradentes, 109 – Centro Campina Grande-PB</li>
+                        </ul>
+                    </div>
+                    <!-- RODAPÉ - Redes sociais -->
+                    <div>
+                        <h3>Redes sociais</h3>
+                        <div class="redes">
+                            <a
+                                class="rede"
+                                href="https://www.instagram.com/drprotesecapilaroficial/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                            >
+                            <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a
+                                class="rede"
+                                href="https://www.facebook.com/drprotesecapilaroficial/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                            >
+                            <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a
+                                class="rede"
+                                href="https://www.tiktok.com/@drprotesecapilaroficial"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="TikTok"
+                            >
+                            <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                            <a
+                                class="rede"
+                                href="https://www.youtube.com/@drprotesecapilaroficial"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="YouTube"
+                            >
+                            <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- RODAPÉ - Direitos autorais -->
+                <div class="rodape-base">
+                    ©
+                    <span id="ano-atual"></span>
+                    Dr Prótese Capilar. Todos os direitos reservados.
+                </div>
+            </div>
+        </footer>
+
+        <!-- WHATSAPP FLUTUANTE - Atalho permanente para atendimento -->
+        <a
+            class="whatsapp-flutuante"
+            href="https://wa.me/5583986934230?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20pr%C3%B3tese%20capilar."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Conversar pelo WhatsApp"
+        >
+        <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <script>
+            /* JAVASCRIPT - Seleção dos elementos do menu mobile */
+            const botaoMenu = document.querySelector(".menu-botao");
+            const menu = document.querySelector(".menu");
+
+            /* JAVASCRIPT - Abertura e fechamento do menu mobile */
+            botaoMenu.addEventListener("click", () => {
+                const aberto = menu.classList.toggle("aberto");
+                botaoMenu.setAttribute("aria-expanded", String(aberto));
+                botaoMenu.setAttribute(
+                    "aria-label",
+                    aberto ? "Fechar menu" : "Abrir menu",
+                );
+                botaoMenu.textContent = aberto ? "✕" : "☰";
             });
 
-        });
+            /* JAVASCRIPT - Fechamento do menu após selecionar um link */
+            menu.querySelectorAll("a").forEach((link) =>
+                link.addEventListener("click", () => {
+                    menu.classList.remove("aberto");
+                    botaoMenu.setAttribute("aria-expanded", "false");
+                    botaoMenu.textContent = "☰";
+                }),
+            );
 
-    </script>
+            /* JAVASCRIPT - Seleção dos elementos do carrossel */
+            const trilho = document.querySelector(".carrossel-trilho");
+            const carrossel = document.querySelector(".carrossel");
+            const indicadores = [...document.querySelectorAll(".indicador")];
+            let slideAtual = 0;
 
-</body>
+            /* JAVASCRIPT - Exibição e atualização do resultado selecionado */
+            function mostrarSlide(indice) {
+                slideAtual = (indice + indicadores.length) % indicadores.length;
+                trilho.style.transform = `translateX(-${slideAtual * 100}%)`;
+                indicadores.forEach((item, i) =>
+                    item.classList.toggle("ativo", i === slideAtual),
+                );
+            }
 
+            /* JAVASCRIPT - Retorno ao resultado anterior */
+            document
+                .querySelector(".carrossel-anterior")
+                .addEventListener("click", () => mostrarSlide(slideAtual - 1));
+
+            /* JAVASCRIPT - Avanço para o próximo resultado */
+            document
+                .querySelector(".carrossel-proximo")
+                .addEventListener("click", () => mostrarSlide(slideAtual + 1));
+
+            /* JAVASCRIPT - Navegação direta pelas bolinhas indicadoras */
+            indicadores.forEach((item, i) =>
+                item.addEventListener("click", () => mostrarSlide(i)),
+            );
+
+            /* JAVASCRIPT - Navegação pelo teclado com as setas */
+            carrossel.addEventListener("keydown", (evento) => {
+                if (evento.key === "ArrowLeft") mostrarSlide(slideAtual - 1);
+                if (evento.key === "ArrowRight") mostrarSlide(slideAtual + 1);
+            });
+
+            /* JAVASCRIPT - Atualização automática do ano do rodapé */
+            document.querySelector("#ano-atual").textContent = new Date().getFullYear();
+        </script>
+    </body>
 </html>
