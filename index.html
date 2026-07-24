@@ -996,6 +996,11 @@
                 .navegacao .botao {
                     display: none;
                 }
+                /* RESPONSIVIDADE TABLET - Posicionamento do menu mobile no canto direito */
+                .navegacao {
+                    flex: 0 0 auto;
+                    margin-left: auto;
+                }
                 /* RESPONSIVIDADE TABLET - Transformação do menu em painel vertical */
                 .menu {
                     width: 100%;
@@ -1121,6 +1126,28 @@
             }
             /* RESPONSIVIDADE CELULAR PEQUENO - Ajustes para telas de até 480px */
             @media (max-width: 480px) {
+                /* RESPONSIVIDADE CELULAR PEQUENO - Limitação do banner à largura da tela */
+                .banner-grade,
+                .banner-conteudo {
+                    width: 100%;
+                    min-width: 0;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Quebra correta dos textos do banner */
+                .banner .rotulo,
+                .banner h1,
+                .banner p {
+                    max-width: 100%;
+                    overflow-wrap: break-word;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Destaque do título em uma nova linha */
+                .banner h1 span {
+                    display: block;
+                }
+                /* RESPONSIVIDADE CELULAR PEQUENO - Redes sociais dentro da largura disponível */
+                .banner-redes {
+                    width: 100%;
+                    max-width: 100%;
+                }
                 /* RESPONSIVIDADE CELULAR PEQUENO - Margens laterais do conteúdo */
                 .conteiner {
                     width: min(100% - 28px, 1180px);
@@ -1149,6 +1176,115 @@
                 /* RESPONSIVIDADE CELULAR PEQUENO - Redução do espaço do endereço */
                 .localizacao-info {
                     padding: 28px;
+                }
+            }
+            /* RESPONSIVIDADE CELULAR MÍNIMO - Ajustes para telas de até 360px */
+            @media (max-width: 360px) {
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução das margens laterais */
+                .conteiner {
+                    width: calc(100% - 20px);
+                }  
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução da altura do header */
+                .cabecalho-conteudo {
+                    min-height: 88px;
+                    gap: 12px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução da área ocupada pela logo */
+                .logo {
+                    flex-basis: 165px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Ajuste do tamanho e posição da logo */
+                .logo img {
+                    width: 110px;
+                    height: 110px;
+                    transform: translateY(3px) scale(1.3);
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do botão do menu */
+                .menu-botao {
+                    width: 42px;
+                    height: 42px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Posicionamento do menu abaixo do header */
+                .menu {
+                    top: 88px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Compensação da altura do header no banner */
+                .banner {
+                    padding-top: 88px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Espaçamento do conteúdo e da imagem do modelo */
+                .banner-conteudo {
+                    padding: 54px 0 270px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do título principal */
+                .banner h1 {
+                    margin: 13px 0 18px;
+                    font-size: 2.15rem;
+                    line-height: 1;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do texto principal */
+                .banner p {
+                    font-size: 0.96rem;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Ajuste dos botões principais */
+                .banner-botoes {
+                    margin-top: 24px;
+                    gap: 10px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução da altura dos botões */
+                .botao {
+                    min-height: 48px;
+                    padding: 0 16px;
+                    white-space: normal;
+                    text-align: center;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Distribuição das redes sociais */
+                .banner-redes {
+                    margin-top: 20px;
+                    justify-content: space-between;
+                    gap: 8px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução dos ícones sociais */
+                .banner-rede {
+                    width: 48px;
+                    height: 48px;
+                    font-size: 1.35rem;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Ajuste da imagem do modelo */
+                .banner-modelo {
+                    bottom: -35px;
+                    width: 110vw;
+                    max-height: 370px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Ajuste do fundo atrás dos textos */
+                .banner-conteudo::after {
+                    inset: 35px -10px 390px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução dos títulos das seções */
+                .titulo-secao {
+                    font-size: 1.85rem;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do espaço interno dos cartões */
+                .beneficio,
+                .depoimento,
+                .localizacao-info {
+                    padding: 22px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Quebra de textos longos no rodapé */
+                .rodape a,
+                .rodape li {
+                    overflow-wrap: anywhere;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do botão flutuante do WhatsApp */
+                .whatsapp-flutuante {
+                    width: 52px;
+                    height: 52px;
+                    right: 12px;
+                    bottom: 12px;
+                }
+                /* RESPONSIVIDADE CELULAR MÍNIMO - Redução do símbolo do WhatsApp */
+                .whatsapp-flutuante i {
+                    font-size: 1.75rem;
                 }
             }
         </style>
