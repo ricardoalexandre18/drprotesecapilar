@@ -494,6 +494,97 @@
                 object-fit: cover;
                 background: #181818;
             }
+            /* FAQ - Espaçamento entre o vídeo e as perguntas */
+            .faq {
+                margin-top: 75px;
+            }
+            /* FAQ - Cabeçalho das perguntas frequentes */
+            .faq-cabecalho {
+                max-width: 760px;
+                margin: 0 auto 38px;
+                text-align: center;
+            }
+            /* FAQ - Organização das 12 perguntas em três colunas */
+            .faq-grade {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: start;
+                gap: 18px;
+                padding: 0 18px;
+            }
+            /* FAQ - Aparência de cada pergunta */
+            .faq-item {
+                overflow: hidden;
+                border: 1px solid #d8c49c;
+                border-radius: 8px;
+                background: #fff;
+                box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+                transition:
+                    border-color 0.25s,
+                    box-shadow 0.25s,
+                    transform 0.25s;
+            }
+            /* FAQ - Destaque do cartão ao passar o mouse */
+            .faq-item:hover {
+                border-color: #d6a313;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+                transform: translateY(-2px);
+            }
+            /* FAQ - Aparência da pergunta clicável */
+            .faq-item summary {
+                position: relative;
+                padding: 20px 48px 20px 20px;
+                color: #181818;
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1.45;
+                cursor: pointer;
+                list-style: none;
+            }
+            /* FAQ - Remoção da seta padrão do navegador */
+            .faq-item summary::-webkit-details-marker {
+                display: none;
+            }
+            /* FAQ - Símbolo de abertura da resposta */
+            .faq-item summary::after {
+                content: "+";
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                color: #d6a313;
+                font-size: 25px;
+                font-weight: 400;
+                transform: translateY(-50%);
+            }
+            /* FAQ - Símbolo exibido quando a resposta está aberta */
+            .faq-item[open] summary::after {
+                content: "−";
+            }
+            /* FAQ - Destaque da pergunta quando estiver aberta */
+            .faq-item[open] summary {
+                color: #9a6500;
+            }
+            /* FAQ - Aparência do texto da resposta */
+            .faq-item p {
+                margin: 0;
+                padding: 0 20px 20px;
+                border-top: 1px solid #eee5d3;
+                color: #666;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            /* FAQ - Espaço acima do texto após a divisória */
+            .faq-item p::before {
+                content: "";
+                display: block;
+                height: 17px;
+            }
+            /* FAQ - Centralização do botão */
+            .faq-acao {
+                margin-top: 38px;
+                text-align: center;
+                transform: translateY(17px);
+            }
             /* PRÓTESES - Fundo escuro da apresentação */
             .proteses-chamada {
                 color: #fff;
@@ -1135,6 +1226,10 @@
                     right: -130px;
                     width: 70vw;
                 }
+                /* RESPONSIVIDADE TABLET - FAQ em duas colunas */
+                .faq-grade {
+                    grid-template-columns: repeat(2, 1fr);
+                }
                 /* RESPONSIVIDADE TABLET - Organização do rodapé em duas colunas */
                 .rodape-grade {
                     grid-template-columns: repeat(2, 1fr);
@@ -1200,6 +1295,14 @@
                 .depoimentos-grade {
                     grid-template-columns: 1fr;
                 }
+                /* RESPONSIVIDADE CELULAR - FAQ em uma coluna */
+                .faq-grade {
+                    grid-template-columns: 1fr;
+                }
+                /* RESPONSIVIDADE CELULAR - Redução do espaço acima do FAQ */
+                .faq {
+                    margin-top: 55px;
+                }
                 /* RESPONSIVIDADE CELULAR - Proporção do carrossel */
                 .slide {
                     aspect-ratio: 4/3;
@@ -1208,7 +1311,6 @@
                 .contato-formulario-grade {
                     grid-template-columns: 1fr;
                 }
-
                 /* RESPONSIVIDADE CELULAR - Campos largos na grade do formulário */
                 .contato-campo-largo {
                     grid-column: auto;
@@ -1547,6 +1649,163 @@
                             Seu navegador não suporta vídeos HTML5.
                         </video>
                         <!-- VÍDEO - Substituir o arquivo acima pelo vídeo institucional definitivo -->
+                    </div>
+
+                    <!-- FAQ - Perguntas frequentes abaixo do vídeo institucional -->
+                    <div class="faq">
+                        <header class="faq-cabecalho">
+                            <span class="rotulo">Tire suas dúvidas</span>
+                            <h2 class="titulo-secao">Perguntas Frequentes</h2>
+                            <p class="texto-secao">
+                                Encontre respostas para as principais dúvidas sobre
+                                próteses capilares, colocação e manutenção.
+                            </p>
+                        </header>
+
+                        <!-- FAQ - Grade com as 12 perguntas -->
+                        <div class="faq-grade">
+
+                            <details class="faq-item">
+                                <summary>1. Como faço para agendar a minha colocação?</summary>
+                                <p>
+                                    É muito simples! Basta clicar no botão “Falar no
+                                    WhatsApp” disponível no menu desta página. Você será
+                                    direcionado para nossa equipe de especialistas, que irá
+                                    tirar suas dúvidas e agendar sua avaliação.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>2. Quanto tempo dura uma prótese capilar?</summary>
+                                <p>
+                                    A durabilidade média é de 1 ano ou mais, dependendo
+                                    principalmente dos cuidados diários e da manutenção
+                                    realizada pelo cliente. Seguindo corretamente nossas
+                                    orientações, é possível aumentar significativamente a
+                                    vida útil da prótese.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    3. Quanto tempo dura o procedimento de colocação?
+                                </summary>
+                                <p>
+                                    O procedimento leva, em média, de 2 a 4 horas,
+                                    dependendo da complexidade de cada caso. Recomendamos
+                                    que o cliente reserve entre 3 e 6 horas do seu dia para
+                                    que todo o processo seja realizado com tranquilidade,
+                                    conforto e máxima qualidade.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>4. Onde vocês estão localizados?</summary>
+                                <p>
+                                    Estamos localizados na Rua Tiradentes, nº 109, Centro,
+                                    Campina Grande – PB.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    5. Vocês também oferecem serviços de barbearia?
+                                </summary>
+                                <p>
+                                    Sim. No Dr Prótese Capilar, oferecemos serviços de
+                                    prótese capilar e barbearia. Ao adquirir uma de nossas
+                                    próteses, você também contará com serviços de barbeiro,
+                                    incluindo técnicas de visagismo, para garantir um
+                                    resultado natural e harmonioso.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>6. Posso tomar banho com a prótese capilar?</summary>
+                                <p>
+                                    Sim! Você pode tomar banho normalmente. Também
+                                    fornecemos um guia completo de cuidados e manutenção.
+                                    A prótese pode ser utilizada em piscinas e durante
+                                    atividades do dia a dia, desde que sejam seguidas as
+                                    orientações de conservação.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    7. Quais produtos devo usar para cuidar da prótese?
+                                </summary>
+                                <p>
+                                    Nosso especialista orientará você sobre os produtos mais
+                                    indicados. Recomendamos produtos específicos para
+                                    higienização, hidratação e finalização, garantindo um
+                                    aspecto bonito e natural por muito mais tempo.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    8. Preciso fazer manutenção na prótese capilar?
+                                </summary>
+                                <p>
+                                    Sim. A manutenção periódica é fundamental para preservar
+                                    a aparência, a higiene e a durabilidade da prótese. A
+                                    frequência varia conforme o estilo de vida e o crescimento
+                                    natural do cabelo. Nossa equipe indicará o intervalo
+                                    ideal para o seu caso.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>9. A prótese capilar fica natural?</summary>
+                                <p>
+                                    Sim! Trabalhamos com próteses de alta qualidade. Nosso
+                                    especialista realiza a adaptação, o corte e a finalização
+                                    de forma personalizada, respeitando o formato do seu
+                                    rosto e o seu estilo.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    10. Como funciona o período de adaptação à prótese capilar?
+                                </summary>
+                                <p>
+                                    A adaptação costuma ser rápida e varia de pessoa para pessoa. Nos primeiros dias, é normal perceber uma sensação diferente no couro cabeludo, pois você estará se acostumando com a prótese e com a nova aparência. Com manutenção em dia, a prótese permanece firme e segura durante as atividades. Com o uso e o acompanhamento adequado, a prótese passa a fazer parte da rotina de maneira confortável e natural.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    11. A prótese capilar machuca ou causa dor?
+                                </summary>
+                                <p>
+                                    Não. A colocação da prótese é um procedimento indolor e
+                                    não invasivo. Durante a aplicação, nosso especialista
+                                    utiliza técnicas e produtos adequados para garantir o
+                                    máximo de conforto.
+                                </p>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    12. Como saber qual prótese é ideal para mim?
+                                </summary>
+                                <p>
+                                    Realizamos uma avaliação personalizada para identificar
+                                    o modelo, a cor, a densidade e o estilo mais adequados
+                                    ao seu perfil, garantindo um resultado natural e
+                                    harmonioso.
+                                </p>
+                            </details>
+                        </div>
+
+                        <!-- FAQ - Botão que leva ao formulário de contato -->
+                        <div class="faq-acao">
+                            <a class="botao botao-dourado" href="#contato">
+                                Agendar minha avaliação
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
