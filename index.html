@@ -468,12 +468,13 @@
                 background: #0b0b0b;
                 box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
             }
-            /* VÍDEO - Ajuste do vídeo dentro da moldura */
-            .video-moldura video {
+            /* VÍDEO - Ajuste do player do YouTube dentro da moldura */
+            .video-moldura iframe {
+                display: block;
                 width: 100%;
                 height: 100%;
+                border: 0;
                 border-radius: 5px;
-                object-fit: cover;
                 background: #181818;
             }
             /* FAQ - Espaçamento entre o vídeo e as perguntas */
@@ -1925,16 +1926,17 @@
                             transformação.
                         </p>
                     </header>
+
                     <!-- VÍDEO - Player do vídeo institucional -->
                     <div class="video-moldura">
-                        <video controls preload="metadata">
-                            <source
-                                src="assets/videos/video-institucional.mp4"
-                                type="video/mp4"
-                            />
-                            Seu navegador não suporta vídeos HTML5.
-                        </video>
-                        <!-- VÍDEO - Substituir o arquivo acima pelo vídeo institucional definitivo -->
+                        <iframe
+                             src="https://www.youtube-nocookie.com/embed/IydM0pkk-UU?rel=0"
+                             title="Dr Prótese Capilar | Recupere sua Confiança"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                             referrerpolicy="strict-origin-when-cross-origin"
+                             allowfullscreen
+                        ></iframe>
                     </div>
 
                     <!-- FAQ - Perguntas frequentes abaixo do vídeo institucional -->
