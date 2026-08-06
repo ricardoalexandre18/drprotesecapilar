@@ -859,6 +859,36 @@ a {
         padding-left: 0;
     }
 }
+/* TELAS COM ALTURA ATÉ 800PX */
+@media (max-height: 800px) {
+    .cartao {
+    grid-template-rows: auto auto auto auto auto auto;
+    align-content: space-between;
+    }
+    .informacoes {
+        top: 0;
+        padding-top: 17px;
+    }
+    /* ÁREA DOS BOTÕES */
+    .grade-botoes {
+    top: 5px;
+    min-height: 256px;
+    align-self: auto;
+    grid-template-rows: repeat(4, 55px);
+    row-gap: 12px;
+    }
+    /* PAINEL DE AÇÕES */
+    .painel-acoes {
+    margin-top: 16px;
+    padding: 12px 3px 8px;
+    }
+    .icone-acao {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        transform: translateY(-4px) scale(1.10);
+    }
+}
 /* TELAS COM ALTURA ATÉ 700PX */
 @media (max-height: 700px) {
     .cartao {
@@ -872,6 +902,9 @@ a {
     .botao-contato {
         padding-top: 3px;
         padding-bottom: 3px;
+    }
+    .painel-acoes {
+    margin-top: 10px;
     }
 }
 /* TELAS COM ALTURA ATÉ 600PX */
@@ -895,6 +928,7 @@ a {
     }
     .grade-botoes {
     top: 2px;
+    min-height: 197px;
     grid-template-rows: repeat(4, 44px);
     row-gap: 7px;
     }
@@ -929,6 +963,7 @@ a {
     transform: translateY(-3px) scale(1.08);
     }
     .painel-acoes {
+    margin-top: 6px;
     padding: 10px 3px 7px;
     }
 }
