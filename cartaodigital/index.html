@@ -17,11 +17,11 @@
 <meta property="og:title" content="Ricardo Pontes | Dr. Prótese Capilar">
 <meta property="og:description" content="Especialista em prótese capilar. Acesse o cartão digital e agende sua avaliação.">
 <meta property="og:url" content="https://www.drprotesecapilar.com.br/cartaodigital/">
-<meta property="og:image" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v2.jpg">
-<meta property="og:image:secure_url" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v2.jpg">
+<meta property="og:image" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v3.jpg">
+<meta property="og:image:secure_url" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v3.jpg">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
 <meta property="og:image:alt" content="Cartão digital de Ricardo Pontes, especialista em prótese capilar">
 <!-- PRÉVIA COMPLEMENTAR -->
 <meta name="twitter:card" content="summary_large_image">
@@ -1234,37 +1234,21 @@ function baixarContato() {
     URL.revokeObjectURL(enderecoArquivo);
     mostrarAviso("Contato preparado para ser salvo.");
 }
-/* COMPARTILHAR CARTÃO DIGITAL */
-async function compartilhar() {
-    const conteudo = {
-        title: `${dadosCliente.nome} | ${dadosCliente.empresa}`,
-        text: `${dadosCliente.especialidade}. Acesse meu cartão digital:`,
-        url: dadosCliente.linkCartao
-    };
+/* COMPARTILHAR CARTÃO PELO WHATSAPP */
+function compartilhar() {
+    /* NOVA VERSÃO PARA EVITAR O CACHE */
+    const linkCompartilhamento =
+        `${dadosCliente.linkCartao}?v=8`;
 
-    if (navigator.share) {
-        try {
-            await navigator.share(conteudo);
-        } catch (erro) {
-            if (erro.name !== "AbortError") {
-                mostrarAviso("Não foi possível compartilhar.");
-            }
-        }
+    /* ABRIR O WHATSAPP COM O LINK PREENCHIDO */
+    const enderecoWhatsapp =
+        `https://wa.me/?text=${encodeURIComponent(linkCompartilhamento)}`;
 
-        return;
-    }
-
-    const mensagem =
-        `${conteudo.title}\n` +
-        `${conteudo.text}\n` +
-        `${conteudo.url}`;
-
-    try {
-        await navigator.clipboard.writeText(mensagem);
-        mostrarAviso("Link do cartão copiado.");
-    } catch {
-        mostrarAviso("Não foi possível copiar o link.");
-    }
+    window.open(
+        enderecoWhatsapp,
+        "_blank",
+        "noopener,noreferrer"
+    );
 }
 /* GERAR QR CODE */
 let qrCodeGerado = false;
