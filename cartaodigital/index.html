@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Dr. Prótese Capilar">
 <meta property="og:title" content="Ricardo Pontes | Dr. Prótese Capilar">
-<meta property="og:description" content="Especialista em prótese capilar. Acesse o cartão digital e agende sua avaliação.">
+<meta property="og:description" content="Especialista em prótese capilar. Acesse o meu Cartão Digital.">
 <meta property="og:url" content="https://www.drprotesecapilar.com.br/cartaodigital/">
 <meta property="og:image" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v3.jpg">
 <meta property="og:image:secure_url" content="https://www.drprotesecapilar.com.br/cartaodigital/preview-card-v3.jpg">
@@ -1238,7 +1238,7 @@ function baixarContato() {
 function compartilhar() {
     /* NOVA VERSÃO PARA EVITAR O CACHE */
     const linkCompartilhamento =
-        `${dadosCliente.linkCartao}?v=8`;
+        dadosCliente.linkCartao;
 
     /* ABRIR O WHATSAPP COM O LINK PREENCHIDO */
     const enderecoWhatsapp =
