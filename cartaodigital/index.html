@@ -857,6 +857,115 @@ a {
     font-size: 14px;
 }
 
+/* CONTEÚDO DO MODAL DO PIX */
+.modal-conteudo-pix {
+    width: min(390px, calc(100vw - 24px));
+    max-height: calc(100vh - 24px);
+    padding: clamp(16px, 2.5vh, 22px);
+    overflow-y: auto;
+}
+
+/* QR CODE DO PIX */
+.qr-code-pix {
+    width: min(180px, 44vw, 28vh);
+    height: min(180px, 44vw, 28vh);
+    margin-top: clamp(8px, 1.5vh, 13px);
+}
+
+/* DADOS PARA CONFERÊNCIA DO PIX */
+.dados-pix {
+    width: 100%;
+    margin-top: 13px;
+    padding: 12px;
+    border: 1px solid rgba(229, 184, 72, 0.38);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.045);
+    text-align: left;
+}
+
+/* TÍTULO DOS DADOS DO PIX */
+.dados-pix h3 {
+    margin: 0 0 9px;
+    color: #e5b848;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* LINHAS DOS DADOS DO PIX */
+.dados-pix p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 6px 0;
+    color: #cccccc;
+    font-size: 11px;
+}
+
+/* VALORES DOS DADOS DO PIX */
+.dados-pix strong {
+    max-width: 65%;
+    color: #ffffff;
+    font-size: 11px;
+    text-align: right;
+}
+
+/* AVISO DE CONFERÊNCIA */
+.dados-pix small {
+    display: block;
+    margin-top: 10px;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaaaaa;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* AÇÕES DO PIX */
+.acoes-pix {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* BOTÕES DO PIX */
+.acao-pix {
+    display: flex;
+    min-height: 46px;
+    padding: 7px 4px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid #c5901b;
+    border-radius: 10px;
+    background: rgba(5, 5, 5, 0.78);
+    color: #e5b848;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.25s ease,
+                background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+/* EFEITO DOS BOTÕES DO PIX */
+.acao-pix:hover {
+    background-color: #c5901b;
+    color: #050505;
+    transform: translateY(-2px);
+}
+
+/* ÍCONES DOS BOTÕES DO PIX */
+.acao-pix i {
+    font-size: 14px;
+}
+
 /* RESPONSIVIDADE ATÉ 768PX */
 @media (max-width: 768px) {
     .cartao {
@@ -1286,6 +1395,73 @@ a {
 <!-- FECHAR MODAL DO QR CODE -->
 </div>
 
+<!-- MODAL DO PIX -->
+<div class="modal" id="modalPix" role="dialog" aria-modal="true" aria-labelledby="tituloPix">
+<div class="modal-conteudo modal-conteudo-pix">
+
+<!-- FECHAR MODAL DO PIX -->
+<button class="fechar-modal" id="fecharPix" type="button" aria-label="Fechar pagamento Pix">
+<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+</button>
+
+<!-- TÍTULO DO PIX -->
+<h2 class="modal-titulo" id="tituloPix">Pagamento via Pix</h2>
+
+<!-- ORIENTAÇÃO -->
+<p class="modal-texto">
+Escaneie o QR Code ou copie o código Pix.
+</p>
+
+<!-- QR CODE DO PIX -->
+<div class="qr-code qr-code-pix" id="qrCodePix"></div>
+
+<!-- DADOS PARA CONFERÊNCIA -->
+<section class="dados-pix" aria-label="Dados do recebedor">
+
+<h3>Confira antes de pagar</h3>
+
+<p>
+<span>Nome completo</span>
+<strong>Ricardo de Farias Pontes</strong>
+</p>
+
+<p>
+<span>Banco</span>
+<strong>Caixa Econômica Federal</strong>
+</p>
+
+<small>
+Antes de confirmar o pagamento, confira se os dados exibidos no aplicativo correspondem às informações acima.
+</small>
+
+</section>
+
+<!-- AÇÕES DO PIX -->
+<div class="acoes-pix">
+
+<!-- COPIAR PIX -->
+<button class="acao-pix" id="copiarPix" type="button">
+<i class="fa-regular fa-copy" aria-hidden="true"></i>
+<span>Copiar código</span>
+</button>
+
+<!-- COMPARTILHAR PIX -->
+<button class="acao-pix" id="compartilharPix" type="button">
+<i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+<span>Compartilhar</span>
+</button>
+
+<!-- IMPRIMIR PIX -->
+<button class="acao-pix" id="imprimirPix" type="button">
+<i class="fa-solid fa-print" aria-hidden="true"></i>
+<span>Imprimir</span>
+</button>
+
+</div>
+
+</div>
+</div>
+
 <!-- AVISO -->
 <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
 
@@ -1306,7 +1482,13 @@ const dadosCliente = {
     site: "https://ricardoalexandre18.github.io/drprotesecapilar/",
     endereco: "Rua Tiradentes, 109 - Centro - Campina Grande-PB",
     linkCartao: "https://www.drprotesecapilar.com.br/cartaodigital/",
-    mensagemWhatsapp: "Olá! Conheci o trabalho do Dr. Prótese Capilar pelo cartão digital e gostaria de agendar uma avaliação."
+    mensagemWhatsapp: "Olá! Conheci o trabalho do Dr. Prótese Capilar pelo cartão digital e gostaria de agendar uma avaliação.",
+
+pix: {
+    recebedor: "Ricardo de Farias Pontes",
+    banco: "Caixa Econômica Federal",
+    codigo: "00020126580014br.gov.bcb.pix013645eb52b3-e2b9-4331-a6e9-9aa4dc766cee5204000053039865802BR5924RICARDO DE FARIAS PONTES6014CAMPINA GRANDE62070503***6304AAAE"
+}
 };
 
 /* ELEMENTOS DOS LINKS */
@@ -1321,6 +1503,12 @@ const linkLocalizacao = document.getElementById("linkLocalizacao");
 
 /* ELEMENTOS DAS AÇÕES */
 const abrirPix = document.getElementById("abrirPix");
+const fecharPix = document.getElementById("fecharPix");
+const modalPix = document.getElementById("modalPix");
+const qrCodePix = document.getElementById("qrCodePix");
+const copiarPix = document.getElementById("copiarPix");
+const compartilharPix = document.getElementById("compartilharPix");
+const imprimirPix = document.getElementById("imprimirPix");
 const salvarContato = document.getElementById("salvarContato");
 const instalarCartao = document.getElementById("instalarCartao");
 const compartilharTopo = document.getElementById("compartilharTopo");
@@ -1450,48 +1638,78 @@ function criarQrCodeAltaResolucao() {
     return canvasAltaResolucao;
 }
 
-/* IMPRIMIR QR CODE */
+/* IMPRIMIR QR CODE DO CARTÃO EM ALTA QUALIDADE */
 function imprimirImagemQrCode() {
-    const canvasQrCode = qrCode.querySelector("canvas");
+    const canvasAltaResolucao =
+        criarQrCodeAltaResolucao();
 
-    if (!canvasQrCode) {
+    if (!canvasAltaResolucao) {
         mostrarAviso("Aguarde o QR Code ser carregado.");
         return;
     }
 
-    const imagemQrCode = canvasQrCode.toDataURL("image/png");
-    const janelaImpressao = window.open("", "_blank", "width=700,height=800");
+    /* GERAR IMAGEM PNG EM 1200 X 1200 PIXELS */
+    const imagemQrCode =
+        canvasAltaResolucao.toDataURL("image/png");
+
+    const janelaImpressao = window.open(
+        "",
+        "_blank",
+        "width=700,height=850"
+    );
 
     if (!janelaImpressao) {
-        mostrarAviso("Permita a abertura de janelas para imprimir.");
+        mostrarAviso(
+            "Permita a abertura de janelas para imprimir."
+        );
         return;
     }
 
-    janelaImpressao.document.title = "QR Code | Dr. Prótese Capilar";
+    janelaImpressao.document.title =
+        "QR Code | Dr. Prótese Capilar";
+
     janelaImpressao.document.body.style.margin = "0";
     janelaImpressao.document.body.style.padding = "40px";
-    janelaImpressao.document.body.style.fontFamily = "Arial, sans-serif";
+    janelaImpressao.document.body.style.fontFamily =
+        "Arial, sans-serif";
     janelaImpressao.document.body.style.textAlign = "center";
+    janelaImpressao.document.body.style.color = "#111111";
 
-    const titulo = janelaImpressao.document.createElement("h1");
+    const titulo =
+        janelaImpressao.document.createElement("h1");
+
     titulo.textContent = "Dr. Prótese Capilar";
 
-    const texto = janelaImpressao.document.createElement("p");
-    texto.textContent = "Aponte a câmera do celular e acesse nosso cartão digital.";
+    const texto =
+        janelaImpressao.document.createElement("p");
 
-    const imagem = janelaImpressao.document.createElement("img");
+    texto.textContent =
+        "Aponte a câmera do celular e acesse nosso cartão digital.";
+
+    const imagem =
+        janelaImpressao.document.createElement("img");
+
     imagem.src = imagemQrCode;
     imagem.alt = "QR Code do Dr. Prótese Capilar";
-    imagem.style.width = "320px";
+    imagem.style.width = "400px";
     imagem.style.maxWidth = "100%";
     imagem.style.display = "block";
     imagem.style.margin = "25px auto";
 
-    const endereco = janelaImpressao.document.createElement("p");
-    endereco.textContent = "www.drprotesecapilar.com.br/cartaodigital";
+    const endereco =
+        janelaImpressao.document.createElement("p");
+
+    endereco.textContent =
+        "www.drprotesecapilar.com.br/cartaodigital";
+
     endereco.style.fontWeight = "bold";
 
-    janelaImpressao.document.body.append(titulo, texto, imagem, endereco);
+    janelaImpressao.document.body.append(
+        titulo,
+        texto,
+        imagem,
+        endereco
+    );
 
     imagem.onload = () => {
         janelaImpressao.focus();
@@ -1499,18 +1717,21 @@ function imprimirImagemQrCode() {
     };
 }
 
-/* COMPARTILHAR QR CODE COMO IMAGEM */
+/* COMPARTILHAR QR CODE DO CARTÃO COMO IMAGEM */
 function compartilharImagemQrCode() {
-    const canvasQrCode = criarQrCodeAltaResolucao();
+    const canvasAltaResolucao =
+        criarQrCodeAltaResolucao();
 
-    if (!canvasQrCode) {
+    if (!canvasAltaResolucao) {
         mostrarAviso("Aguarde o QR Code ser carregado.");
         return;
     }
 
-    canvasQrCode.toBlob(async arquivoBlob => {
+    canvasAltaResolucao.toBlob(async arquivoBlob => {
         if (!arquivoBlob) {
-            mostrarAviso("Não foi possível preparar o QR Code.");
+            mostrarAviso(
+                "Não foi possível preparar o QR Code."
+            );
             return;
         }
 
@@ -1520,6 +1741,7 @@ function compartilharImagemQrCode() {
             { type: "image/png" }
         );
 
+        /* COMPARTILHAR A IMAGEM PELO CELULAR */
         if (
             navigator.share &&
             navigator.canShare &&
@@ -1528,30 +1750,41 @@ function compartilharImagemQrCode() {
             try {
                 await navigator.share({
                     title: "Dr. Prótese Capilar",
-                    text: "Acesse o cartão digital do Dr. Prótese Capilar.",
+                    text:
+                        "Acesse o cartão digital do Dr. Prótese Capilar.",
                     files: [arquivoQrCode]
                 });
             } catch (erro) {
                 if (erro.name !== "AbortError") {
-                    mostrarAviso("Não foi possível compartilhar o QR Code.");
+                    mostrarAviso(
+                        "Não foi possível compartilhar o QR Code."
+                    );
                 }
             }
 
             return;
         }
 
-        const enderecoImagem = URL.createObjectURL(arquivoBlob);
-        const download = document.createElement("a");
+        /* BAIXAR QUANDO O COMPARTILHAMENTO NÃO FOR COMPATÍVEL */
+        const enderecoImagem =
+            URL.createObjectURL(arquivoBlob);
+
+        const download =
+            document.createElement("a");
 
         download.href = enderecoImagem;
-        download.download = "dr-protese-capilar-qrcode.png";
+        download.download =
+            "dr-protese-capilar-qrcode.png";
 
         document.body.appendChild(download);
         download.click();
         download.remove();
 
         URL.revokeObjectURL(enderecoImagem);
-        mostrarAviso("QR Code baixado como imagem.");
+
+        mostrarAviso(
+            "QR Code baixado. Agora você pode compartilhá-lo."
+        );
     }, "image/png");
 }
 
@@ -1613,9 +1846,292 @@ async function instalarAplicativo() {
     mostrarAviso("A instalação estará disponível em alguns instantes.");
 }
 
-/* AVISO TEMPORÁRIO DO PIX */
-abrirPix.addEventListener("click", () => {
-    mostrarAviso("Pagamento via Pix disponível em breve.");
+/* GERAR QR CODE DO PIX */
+let qrCodePixGerado = false;
+
+function gerarQrCodePix() {
+    if (qrCodePixGerado) return;
+
+    if (typeof QRCode === "undefined") {
+        qrCodePix.innerHTML =
+            "<p style='color:#111;font-size:11px'>Não foi possível carregar o QR Code.</p>";
+        return;
+    }
+
+    const tamanho = Math.min(
+        qrCodePix.clientWidth - 18,
+        qrCodePix.clientHeight - 18
+    );
+
+    new QRCode(qrCodePix, {
+        text: dadosCliente.pix.codigo,
+        width: tamanho,
+        height: tamanho,
+        colorDark: "#080808",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+
+    qrCodePixGerado = true;
+}
+
+/* ABRIR MODAL DO PIX */
+function abrirModalPix() {
+    modalPix.classList.add("aberto");
+    requestAnimationFrame(gerarQrCodePix);
+    fecharPix.focus();
+}
+
+/* FECHAR MODAL DO PIX */
+function fecharModalPix() {
+    modalPix.classList.remove("aberto");
+    abrirPix.focus();
+}
+
+/* COPIAR CÓDIGO PIX */
+async function copiarCodigoPix() {
+    try {
+        await navigator.clipboard.writeText(dadosCliente.pix.codigo);
+        mostrarAviso("Código Pix copiado com sucesso.");
+    } catch (erro) {
+        const campoTemporario = document.createElement("textarea");
+
+        campoTemporario.value = dadosCliente.pix.codigo;
+        campoTemporario.style.position = "fixed";
+        campoTemporario.style.opacity = "0";
+
+        document.body.appendChild(campoTemporario);
+        campoTemporario.select();
+        document.execCommand("copy");
+        campoTemporario.remove();
+
+        mostrarAviso("Código Pix copiado com sucesso.");
+    }
+}
+
+/* COMPARTILHAR QR CODE DO PIX COMO IMAGEM */
+function compartilharCodigoPix() {
+    const canvasOriginal = qrCodePix.querySelector("canvas");
+
+    if (!canvasOriginal) {
+        mostrarAviso("Aguarde o QR Code do Pix ser carregado.");
+        return;
+    }
+
+    /* CRIAR IMAGEM EM ALTA RESOLUÇÃO */
+    const canvasAltaResolucao = document.createElement("canvas");
+    const tamanhoFinal = 1200;
+    const margemBranca = 100;
+    const tamanhoQrCode = tamanhoFinal - (margemBranca * 2);
+
+    canvasAltaResolucao.width = tamanhoFinal;
+    canvasAltaResolucao.height = tamanhoFinal;
+
+    const contexto = canvasAltaResolucao.getContext("2d");
+
+    /* FUNDO BRANCO */
+    contexto.fillStyle = "#ffffff";
+    contexto.fillRect(0, 0, tamanhoFinal, tamanhoFinal);
+
+    /* MANTER O QR CODE NÍTIDO */
+    contexto.imageSmoothingEnabled = false;
+
+    contexto.drawImage(
+        canvasOriginal,
+        margemBranca,
+        margemBranca,
+        tamanhoQrCode,
+        tamanhoQrCode
+    );
+
+    canvasAltaResolucao.toBlob(async arquivoBlob => {
+        if (!arquivoBlob) {
+            mostrarAviso("Não foi possível preparar o QR Code do Pix.");
+            return;
+        }
+
+        const arquivoQrCodePix = new File(
+            [arquivoBlob],
+            "pix-dr-protese-capilar.png",
+            { type: "image/png" }
+        );
+
+        /* COMPARTILHAR A IMAGEM PELO CELULAR */
+        if (
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({ files: [arquivoQrCodePix] })
+        ) {
+            try {
+                await navigator.share({
+                    title: "Pix | Dr. Prótese Capilar",
+                    text:
+                        `Recebedor: ${dadosCliente.pix.recebedor}\n` +
+                        `Banco: ${dadosCliente.pix.banco}`,
+                    files: [arquivoQrCodePix]
+                });
+            } catch (erro) {
+                if (erro.name !== "AbortError") {
+                    mostrarAviso("Não foi possível compartilhar o QR Code do Pix.");
+                }
+            }
+
+            return;
+        }
+
+        /* BAIXAR A IMAGEM QUANDO O COMPARTILHAMENTO NÃO FOR COMPATÍVEL */
+        const enderecoImagem = URL.createObjectURL(arquivoBlob);
+        const download = document.createElement("a");
+
+        download.href = enderecoImagem;
+        download.download = "pix-dr-protese-capilar.png";
+
+        document.body.appendChild(download);
+        download.click();
+        download.remove();
+
+        URL.revokeObjectURL(enderecoImagem);
+
+        mostrarAviso(
+            "QR Code do Pix baixado. Agora você pode compartilhá-lo."
+        );
+    }, "image/png");
+}
+
+/* IMPRIMIR QR CODE DO PIX EM ALTA QUALIDADE */
+function imprimirQrCodePix() {
+    const canvasOriginal = qrCodePix.querySelector("canvas");
+
+    if (!canvasOriginal) {
+        mostrarAviso("Aguarde o QR Code do Pix ser carregado.");
+        return;
+    }
+
+    /* CRIAR QR CODE EM ALTA RESOLUÇÃO */
+    const canvasAltaResolucao = document.createElement("canvas");
+    const tamanhoFinal = 1200;
+    const margemBranca = 100;
+    const tamanhoQrCode = tamanhoFinal - (margemBranca * 2);
+
+    canvasAltaResolucao.width = tamanhoFinal;
+    canvasAltaResolucao.height = tamanhoFinal;
+
+    const contexto = canvasAltaResolucao.getContext("2d");
+
+    /* FUNDO BRANCO */
+    contexto.fillStyle = "#ffffff";
+    contexto.fillRect(0, 0, tamanhoFinal, tamanhoFinal);
+
+    /* PRESERVAR A NITIDEZ DOS QUADRADOS */
+    contexto.imageSmoothingEnabled = false;
+
+    contexto.drawImage(
+        canvasOriginal,
+        margemBranca,
+        margemBranca,
+        tamanhoQrCode,
+        tamanhoQrCode
+    );
+
+    const imagemPix =
+        canvasAltaResolucao.toDataURL("image/png");
+
+    const janelaImpressao = window.open(
+        "",
+        "_blank",
+        "width=700,height=850"
+    );
+
+    if (!janelaImpressao) {
+        mostrarAviso("Permita a abertura de janelas para imprimir.");
+        return;
+    }
+
+    janelaImpressao.document.title =
+        "Pix | Dr. Prótese Capilar";
+
+    janelaImpressao.document.body.style.margin = "0";
+    janelaImpressao.document.body.style.padding = "35px";
+    janelaImpressao.document.body.style.fontFamily =
+        "Arial, sans-serif";
+    janelaImpressao.document.body.style.textAlign = "center";
+    janelaImpressao.document.body.style.color = "#111111";
+
+    const titulo =
+        janelaImpressao.document.createElement("h1");
+
+    titulo.textContent = "Dr. Prótese Capilar";
+
+    const subtitulo =
+        janelaImpressao.document.createElement("h2");
+
+    subtitulo.textContent = "Pagamento via Pix";
+
+    const orientacao =
+        janelaImpressao.document.createElement("p");
+
+    orientacao.textContent =
+        "Escaneie o QR Code para realizar o pagamento.";
+
+    const imagem =
+        janelaImpressao.document.createElement("img");
+
+    imagem.src = imagemPix;
+    imagem.alt = "QR Code Pix do Dr. Prótese Capilar";
+    imagem.style.width = "400px";
+    imagem.style.maxWidth = "100%";
+    imagem.style.display = "block";
+    imagem.style.margin = "20px auto";
+
+    const recebedor =
+        janelaImpressao.document.createElement("p");
+
+    recebedor.innerHTML =
+        `<strong>Nome completo:</strong> ${dadosCliente.pix.recebedor}`;
+
+    const banco =
+        janelaImpressao.document.createElement("p");
+
+    banco.innerHTML =
+        `<strong>Banco:</strong> ${dadosCliente.pix.banco}`;
+
+    const avisoConferencia =
+        janelaImpressao.document.createElement("p");
+
+    avisoConferencia.textContent =
+        "Antes de confirmar o pagamento, confira o nome do recebedor e o banco.";
+
+    avisoConferencia.style.marginTop = "22px";
+    avisoConferencia.style.fontSize = "14px";
+
+    janelaImpressao.document.body.append(
+        titulo,
+        subtitulo,
+        orientacao,
+        imagem,
+        recebedor,
+        banco,
+        avisoConferencia
+    );
+
+    imagem.onload = () => {
+        janelaImpressao.focus();
+        janelaImpressao.print();
+    };
+}
+
+/* EVENTOS DO PIX */
+abrirPix.addEventListener("click", abrirModalPix);
+fecharPix.addEventListener("click", fecharModalPix);
+copiarPix.addEventListener("click", copiarCodigoPix);
+compartilharPix.addEventListener("click", compartilharCodigoPix);
+imprimirPix.addEventListener("click", imprimirQrCodePix);
+
+/* FECHAR PIX AO TOCAR FORA DA JANELA */
+modalPix.addEventListener("click", evento => {
+    if (evento.target === modalPix) {
+        fecharModalPix();
+    }
 });
 
 /* EVENTO DO BOTÃO INSTALAR */
@@ -1640,7 +2156,15 @@ modalQrCode.addEventListener("click", evento => {
 
 /* EVENTO DO TECLADO */
 document.addEventListener("keydown", evento => {
-    if (evento.key === "Escape" && modalQrCode.classList.contains("aberto")) fecharModalQrCode();
+    if (evento.key !== "Escape") return;
+
+    if (modalPix.classList.contains("aberto")) {
+        fecharModalPix();
+    }
+
+    if (modalQrCode.classList.contains("aberto")) {
+        fecharModalQrCode();
+    }
 });
 
 /* REGISTRAR O SERVICE WORKER */
