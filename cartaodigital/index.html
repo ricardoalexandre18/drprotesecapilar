@@ -448,7 +448,7 @@ a {
     z-index: 2;
     display: grid;
     min-height: 0;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     padding: 17px 3px 11px;
     border: 1px solid rgba(197, 144, 27, 0.72);
     border-radius: clamp(13px, 2.4vh, 20px);
@@ -464,7 +464,7 @@ a {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: 0 3px;
+    padding: 0 1px;
     background: transparent;
 }
 /* DIVISÓRIA DAS AÇÕES */
@@ -480,15 +480,15 @@ a {
 /* ÍCONE DA AÇÃO */
 .icone-acao {
     display: grid;
-    width: clamp(45px, 6.0vh, 48px);
-    height: clamp(45px, 6.0vh, 48px);
+    width: clamp(39px, 5.4vh, 44px);
+    height: clamp(39px, 5.4vh, 44px);
     place-items: center;
     color: #e5b844;
-    font-size: clamp(17px, 2.7vh, 22px);
+    font-size: clamp(16px, 2.4vh, 20px);
     border: 1px solid #a9761a;
     border-radius: 50%;
     background: #080909;
-    transform: translateY(-6px) scale(1.15);
+    transform: translateY(-5px) scale(1.08);
     transition: color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 /* EFEITO DA AÇÃO */
@@ -515,7 +515,7 @@ a {
     overflow: hidden;
     max-width: 100%;
     color: #d8aa3a;
-    font-size: clamp(7px, 1.15vh, 9px);
+    font-size: clamp(6px, 1vh, 8px);
     line-height: 1.1;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1199,28 +1199,42 @@ a {
 <!-- AÇÕES INFERIORES -->
 <section class="painel-acoes" aria-label="Ações do cartão">
 
-<!-- SALVAR CONTATO -->
+<!-- PIX -->
+<button class="acao" id="abrirPix" type="button">
+<span class="icone-acao">
+<i class="fa-brands fa-pix" aria-hidden="true"></i>
+</span>
+<strong class="titulo-acao">Pix</strong>
+<small class="subtitulo-acao">QR Code</small>
+</button>
+
+<!-- SALVAR -->
 <button class="acao" id="salvarContato" type="button">
-<span class="icone-acao"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
-<strong class="titulo-acao">Salvar contato</strong>
+<span class="icone-acao">
+<i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+</span>
+<strong class="titulo-acao">Salvar</strong>
 <small class="subtitulo-acao">Adicionar à agenda</small>
 </button>
 
-<!-- INSTALAR CARTÃO -->
+<!-- INSTALAR -->
 <button class="acao" id="instalarCartao" type="button">
 <span class="icone-acao">
 <i class="fa-solid fa-download" aria-hidden="true"></i>
 </span>
-<strong class="titulo-acao">Instalar cartão</strong>
+<strong class="titulo-acao">Instalar</strong>
 <small class="subtitulo-acao">Adicionar ao celular</small>
 </button>
 
-<!-- QR CODE -->
+<!-- QR CODE DO CARTÃO -->
 <button class="acao" id="abrirQrCode" type="button">
-<span class="icone-acao"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span>
-<strong class="titulo-acao">Meu QR Code</strong>
-<small class="subtitulo-acao">Ver código</small>
+<span class="icone-acao">
+<i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+</span>
+<strong class="titulo-acao">QR Code</strong>
+<small class="subtitulo-acao">Cartão digital</small>
 </button>
+
 </section>
 
 <!-- FRASE FINAL -->
@@ -1306,6 +1320,7 @@ const linkSite = document.getElementById("linkSite");
 const linkLocalizacao = document.getElementById("linkLocalizacao");
 
 /* ELEMENTOS DAS AÇÕES */
+const abrirPix = document.getElementById("abrirPix");
 const salvarContato = document.getElementById("salvarContato");
 const instalarCartao = document.getElementById("instalarCartao");
 const compartilharTopo = document.getElementById("compartilharTopo");
@@ -1597,6 +1612,11 @@ async function instalarAplicativo() {
 
     mostrarAviso("A instalação estará disponível em alguns instantes.");
 }
+
+/* AVISO TEMPORÁRIO DO PIX */
+abrirPix.addEventListener("click", () => {
+    mostrarAviso("Pagamento via Pix disponível em breve.");
+});
 
 /* EVENTO DO BOTÃO INSTALAR */
 instalarCartao.addEventListener("click", instalarAplicativo);
